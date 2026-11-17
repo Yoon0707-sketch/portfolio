@@ -1,0 +1,1117 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<title>PPPO</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="현장과 교육을 데이터로 연결하는 인재개발(HRD) 전공생 박윤선의 포트폴리오">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+/* Editorial print look: one warm-grey paper, black ink, a dark-red point. Depth comes from layered paper (cards that overlap type and cast real shadows), halftone greyscale pictures, and one colour crop. */
+:root {
+  --paper: #f3f4f5;
+  --paper-2: #e7e9eb;
+  --white: #fcfcfd;
+  --line: #d8dbde;
+  --mute: #6b6f74;
+  --silver: linear-gradient(118deg, #e6e8eb 0%, #fafbfb 20%, #d3d6da 42%, #f4f5f6 60%, #c9cdd1 82%, #eceef0 100%);
+  --chrome: linear-gradient(180deg, #3a3d41 0%, #6e7378 38%, #1c1d1f 52%, #4b4f54 78%, #2a2c2f 100%);
+  --ink: #141413;
+  --black: #0f0f0f;
+  --point: #9b1c31;      /* 어두운 레드. 핑크로 바꾸려면 #ff2d8a */
+  --serif: "Inter", "Noto Sans KR", system-ui, sans-serif;
+  --serif-ko: "Noto Sans KR", "Inter", system-ui, sans-serif;
+  --sans: "Inter", "Noto Sans KR", system-ui, sans-serif;
+  --font: "Noto Sans KR", "Inter", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --max: 1200px;
+  --shadow: 0 1px 1px rgba(20,20,19,.08), 0 6px 12px rgba(20,20,19,.08), 0 24px 48px rgba(20,20,19,.16);
+  --shadow-hi: 0 2px 2px rgba(20,20,19,.08), 0 12px 24px rgba(20,20,19,.12), 0 40px 80px rgba(20,20,19,.22);
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { background: var(--paper); }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font); font-size: 16px; line-height: 1.7; word-break: keep-all; overflow-wrap: break-word; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+img { display: block; max-width: 100%; }
+h1, h2, h3, p, figure { margin: 0; }
+ul, ol, dl { margin: 0; padding: 0; list-style: none; }
+:focus-visible { outline: 2px solid var(--point); outline-offset: 3px; }
+.container { max-width: calc(var(--max) + 80px); margin: 0 auto; padding-left: max(40px, env(safe-area-inset-left, 0px)); padding-right: max(40px, env(safe-area-inset-right, 0px)); }
+.eyebrow { font-family: var(--sans); font-weight: 600; font-size: 12px; letter-spacing: .22em; text-transform: uppercase; }
+
+/* ---------- top ---------- */
+.strip { background: var(--black); color: #c9c8c4; font-family: var(--sans); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; padding-top: env(safe-area-inset-top, 0px); }
+.strip .container { height: 32px; display: flex; align-items: center; justify-content: flex-end; gap: 16px; }
+.strip a { text-decoration: none; }
+.strip a:hover { color: #fff; }
+.strip .r { display: flex; gap: 10px; }
+.bar { position: sticky; top: 0; z-index: 20; background: rgba(243,244,245,.84); -webkit-backdrop-filter: blur(14px) saturate(150%); backdrop-filter: blur(14px) saturate(150%); border-bottom: 1px solid rgba(20,20,19,.08); }
+.bar .container { max-width: none; padding-left: max(100px, calc((100vw - var(--max)) / 2)); padding-right: max(40px, calc((100vw - var(--max)) / 2)); height: 68px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px; }
+.menu { display: flex; gap: 28px; font-family: var(--sans); font-weight: 500; font-size: 12.5px; letter-spacing: .12em; }
+.menu a { text-decoration: none; padding-block: 6px; border-bottom: 1.5px solid transparent; white-space: nowrap; color: #3a3936; }
+.menu a:hover { color: var(--ink); }
+.menu a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--point); }
+.logo { font-family: var(--serif); font-weight: 700; font-size: 26px; letter-spacing: .02em; text-decoration: none; white-space: nowrap; line-height: 1; }
+.logo span { color: var(--point); }
+.logo .eyes { display: inline-flex; gap: 1px; margin: 0 1px; vertical-align: -0.04em; }
+.logo .eye { position: relative; display: inline-block; width: .56em; height: .56em; border: 2.4px solid currentColor; border-radius: 50%; animation: blink 4.5s infinite; color: var(--ink); }
+.logo .eye i { position: absolute; left: 50%; top: 50%; width: .24em; height: .24em; margin: -.12em 0 0 -.12em; border-radius: 50%; background: currentColor; transform: translate(var(--px, 0), var(--py, 0)); transition: transform .12s linear; }
+@keyframes blink { 0%, 93%, 100% { transform: scaleY(1); } 96% { transform: scaleY(.08); } }
+.nametag { position: absolute; top: 0; left: max(28px, env(safe-area-inset-left, 0px)); z-index: 21; display: grid; justify-items: center; text-decoration: none; color: var(--ink); transform-origin: 50% 0; animation: swing 3.2s ease-in-out infinite; }
+.nametag .cord { width: 2px; height: 5px; background: linear-gradient(180deg, #6e1222, var(--point)); }
+.nametag .tagcard { display: grid; justify-items: center; align-content: start; gap: 7px; width: 44px; min-height: 56px; padding: 6px 0 7px; border-radius: 5px; background: var(--silver); border: 1px solid rgba(255,255,255,.9); box-shadow: 0 1px 0 rgba(255,255,255,.8) inset, 0 10px 22px rgba(20,20,19,.18); }
+.nametag .slot { width: 14px; height: 3px; border-radius: 2px; background: #b5b9be; box-shadow: inset 0 1px 1px rgba(0,0,0,.25); }
+.nametag b { font-size: 11px; font-weight: 500; letter-spacing: .04em; writing-mode: vertical-rl; line-height: 1; }
+.nametag:hover { animation-play-state: paused; }
+.nametag:hover b { color: var(--point); }
+@keyframes swing { 0%, 100% { transform: rotate(-6deg); } 50% { transform: rotate(6deg); } }
+.bar .mail-s { justify-self: end; font-family: var(--sans); font-size: 12.5px; letter-spacing: .08em; text-decoration: none; color: #3a3936; }
+.bar .mail-s:hover { color: var(--point); }
+
+/* ---------- buttons ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 26px; background: var(--black); color: #fff; text-decoration: none; font-family: var(--sans); font-weight: 600; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; border: 0; cursor: pointer; box-shadow: 0 1px 0 rgba(255,255,255,.15) inset, 0 8px 18px rgba(0,0,0,.18); transition: background-color .2s, transform .2s, box-shadow .2s; }
+.btn:hover { background: var(--point); transform: translateY(-2px); box-shadow: 0 12px 26px rgba(155,28,49,.28); }
+.btn.line { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); }
+.btn.line:hover { background: var(--ink); color: #fff; box-shadow: none; }
+.btn.light { background: #fff; color: var(--ink); }
+.btn.light:hover { background: var(--point); color: #fff; }
+.more { font-family: var(--sans); font-weight: 600; font-size: 11.5px; letter-spacing: .16em; text-transform: uppercase; text-decoration: none; padding-bottom: 3px; border-bottom: 1px solid currentColor; white-space: nowrap; }
+.more:hover { color: var(--point); }
+
+/* ---------- halftone pictures ---------- */
+.ht { position: relative; overflow: hidden; background: var(--paper-2); }
+.ht img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.12) brightness(1.03); transition: filter .5s, transform .7s cubic-bezier(.2,.7,.2,1); }
+a:hover .ht img, .ht.reveal:hover img { filter: none; transform: scale(1.03); }
+
+/* selection frame (colour crop) */
+.sel { position: absolute; pointer-events: none; outline: 1.5px solid var(--point); }
+.sel i { position: absolute; width: 9px; height: 9px; background: var(--point); }
+.sel i:nth-child(1) { left: -5px; top: -5px; } .sel i:nth-child(2) { right: -5px; top: -5px; }
+.sel i:nth-child(3) { left: -5px; bottom: -5px; } .sel i:nth-child(4) { right: -5px; bottom: -5px; }
+
+/* ---------- HOME hero ---------- */
+.hero { position: relative; overflow: hidden; background: radial-gradient(60% 55% at 50% 40%, #ffffff 0%, rgba(255,255,255,0) 70%), var(--silver); }
+.hero::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(100deg, transparent 30%, rgba(255,255,255,.7) 48%, transparent 66%); mix-blend-mode: soft-light; }
+.hero .container { display: grid; grid-template-columns: 1fr minmax(0, 520px) 1fr; column-gap: 32px; padding-top: 40px; padding-bottom: 64px; }
+.word { grid-column: 1 / -1; grid-row: 1; font-family: var(--serif); font-weight: 800; font-size: clamp(46px, 13.4vw, 184px); line-height: .86; letter-spacing: -.045em; text-align: center; color: var(--ink); background: var(--chrome); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; position: relative; z-index: 1; user-select: none; }
+.word small { -webkit-text-fill-color: var(--mute); display: block; font-family: var(--sans); font-weight: 600; font-size: 12px; letter-spacing: .4em; line-height: 1; margin-bottom: 22px; color: var(--mute); }
+.stage { grid-column: 2; grid-row: 1 / 3; align-self: end; position: relative; z-index: 2; height: 470px; margin-top: clamp(58px, 9.6vw, 128px); perspective: 1400px; }
+.deck { position: absolute; inset: 0; transform-style: preserve-3d; transform: rotateX(var(--rx, 6deg)) rotateY(var(--ry, -4deg)); transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+.deck .card { position: absolute; left: 50%; top: 42%; width: 66%; aspect-ratio: 4 / 3; background: #fff; box-shadow: var(--shadow-hi); transform: translate(-50%, -50%) var(--pos); transition: transform .9s cubic-bezier(.2,.7,.2,1), box-shadow .9s; }
+.deck .card .ht { width: 100%; height: 100%; }
+.deck .card.pos-f { --pos: translate3d(0, -2%, 60px); }
+.deck .card.pos-r { --pos: translate3d(46%, 6%, -40px) rotate(7deg) scale(.72); }
+.deck .card.pos-l { --pos: translate3d(-46%, 16%, -80px) rotate(-8deg) scale(.72); }
+.deck .card.pos-f .ht img { filter: none; }
+.deck .card .sel { inset: -10px; opacity: 0; transition: opacity .4s; }
+.deck .card.pos-f .sel { opacity: 1; transition-delay: .5s; }
+.stage .tag { position: absolute; left: 0; right: 0; bottom: 34px; text-align: center; white-space: nowrap; font-family: var(--sans); font-size: 11.5px; letter-spacing: .16em; color: var(--point); font-weight: 600; }
+.stage .pager { position: absolute; left: 0; right: 0; bottom: 4px; display: flex; justify-content: center; gap: 8px; }
+.stage .pager button { width: 28px; height: 18px; padding: 0; border: 0; background: none; cursor: pointer; display: grid; place-items: center; }
+.stage .pager button::before { content: ""; width: 100%; height: 2px; background: #b4b8bd; transition: background-color .3s; }
+.stage .pager button[aria-current="true"]::before { background: var(--ink); }
+.floor { position: absolute; left: 14%; right: 14%; bottom: 70px; height: 40px; background: radial-gradient(50% 50% at 50% 50%, rgba(20,20,19,.32), transparent 70%); filter: blur(8px); z-index: -1; }
+.hero .left, .hero .right { grid-row: 2; align-self: end; padding-bottom: 8px; position: relative; z-index: 3; }
+.hero .left { grid-column: 1; }
+.hero .right { grid-column: 3; text-align: right; display: grid; gap: 28px; justify-items: end; }
+.hero .left h1 { font-family: var(--serif-ko); font-weight: 700; font-size: clamp(22px, 2.1vw, 28px); line-height: 1.4; letter-spacing: -.01em; }
+.hero .left p { margin-top: 12px; color: #3a3936; font-size: 15px; max-width: 22em; }
+.hero .left .btn { margin-top: 26px; }
+.hero .right b { display: block; font-family: var(--sans); font-weight: 600; font-size: 13px; letter-spacing: .18em; line-height: 1.6; text-transform: uppercase; }
+.hero .right span { display: block; color: var(--mute); font-size: 14px; }
+
+/* ---------- black band: projects ---------- */
+.ink { background: var(--black); color: #fff; }
+.ink .container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding-block: 44px; }
+.step { position: relative; display: grid; grid-template-columns: 58px 1fr; gap: 18px; align-items: start; }
+.step:not(:last-child)::after { content: "→"; position: absolute; right: -32px; top: 4px; font-family: var(--font); font-size: 20px; color: var(--point); }
+.step b em { font-style: normal; font-weight: 500; font-size: 13px; color: #8d9196; margin-left: 10px; letter-spacing: .02em; }
+.step .n { font-family: var(--serif); font-weight: 800; font-size: 40px; line-height: .9; letter-spacing: -.03em; background: linear-gradient(180deg, #f4f5f6, #8d9196 55%, #d3d6da); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.step b { display: block; font-family: var(--font); font-weight: 700; font-size: 17px; color: #fff; }
+.step b::after { content: ""; display: block; width: 18px; height: 2px; margin-top: 10px; background: var(--point); }
+.step strong { display: block; font-size: 14.5px; font-weight: 400; line-height: 1.65; color: #b9bcc0; margin-top: 12px; }
+.pj { display: grid; grid-template-columns: 112px 1fr; gap: 20px; align-items: center; text-decoration: none; }
+.pj .ht { aspect-ratio: 1; box-shadow: 0 14px 30px rgba(0,0,0,.5); background: #222; }
+.pj b { display: block; font-family: var(--font); font-weight: 700; font-size: 13.5px; letter-spacing: .02em; color: #b9bcc0; }
+.pj strong { display: block; font-size: 17px; font-weight: 500; margin: 6px 0 12px; line-height: 1.45; }
+.pj .more { color: #cfcfcf; }
+.pj:hover .more, .pj:hover strong { color: #fff; }
+.pj:hover .more { border-color: var(--point); }
+
+/* ---------- field section ---------- */
+.field { position: relative; background: var(--silver); overflow: hidden; }
+.field .container { display: grid; grid-template-columns: 5fr 7fr; gap: 56px; align-items: center; padding-block: 96px; }
+.field h2 { font-family: var(--serif); font-weight: 700; font-size: clamp(48px, 6.4vw, 92px); line-height: .9; letter-spacing: -.03em; margin: 16px 0 22px; }
+.field p { font-size: 16px; max-width: 26em; }
+.field .btn { margin-top: 30px; }
+.photo { position: relative; box-shadow: var(--shadow-hi); transform: rotate(1.2deg); background: #fff; padding: 12px 12px 44px; }
+.photo .frame { position: relative; }
+.photo .frame > img { width: 100%; height: auto; filter: grayscale(1) contrast(1.15); transition: filter .5s; }
+.photo:hover .frame > img { filter: none; }
+.photo .colour { position: absolute; inset: 0; z-index: 1; clip-path: inset(40% 11% 18% 52%); }
+.photo .colour img { width: 100%; height: auto; }
+.photo .sel { z-index: 2; top: 40%; right: 11%; bottom: 18%; left: 52%; }
+.photo figcaption { position: absolute; left: 14px; right: 14px; bottom: 12px; display: flex; justify-content: space-between; gap: 12px; font-family: var(--sans); font-size: 11px; letter-spacing: .14em; color: var(--mute); text-transform: uppercase; }
+
+/* ---------- numbers ---------- */
+.figs { background: var(--paper); border-bottom: 1px solid var(--line); }
+.figs ul { display: grid; grid-template-columns: repeat(4, 1fr); }
+.figs li { padding: 40px 28px; border-left: 1px solid var(--line); }
+.figs li:first-child { border-left: 0; padding-left: 0; }
+.figs b { display: block; font-family: var(--serif); font-weight: 500; font-size: 56px; line-height: 1; letter-spacing: -.02em; }
+.figs span { display: block; margin-top: 12px; font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
+.figs small { display: block; color: var(--mute); font-size: 14px; margin-top: 4px; }
+
+/* ---------- activity cards ---------- */
+.best { padding-block: 88px 104px; }
+.best header { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 36px; }
+.best h2 { font-family: var(--serif); font-weight: 700; font-size: clamp(34px, 3.6vw, 48px); line-height: 1; letter-spacing: -.02em; }
+.cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.cards a { text-decoration: none; display: block; }
+.cards .ht { aspect-ratio: 4 / 5; box-shadow: var(--shadow); transition: transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s; }
+.cards a:hover .ht { transform: translateY(-8px); box-shadow: var(--shadow-hi); }
+.cards .solid { aspect-ratio: 4 / 5; background: linear-gradient(150deg, #3b3e42 0%, #121314 55%, #2c2e31 100%); color: #fff; display: grid; align-content: end; padding: 24px; box-shadow: var(--shadow); transition: transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s; }
+.cards a:hover .solid { transform: translateY(-8px); box-shadow: var(--shadow-hi); background: var(--point); }
+.cards .solid b { font-family: var(--serif); font-size: 64px; line-height: 1; font-weight: 500; }
+.cards .solid span { font-family: var(--sans); font-size: 11.5px; letter-spacing: .16em; font-weight: 600; margin-top: 8px; }
+.cards p { margin-top: 16px; font-size: 15px; font-weight: 500; line-height: 1.5; }
+.cards small { display: block; color: var(--mute); font-size: 13.5px; margin-top: 2px; }
+.cards a:hover p { color: var(--point); }
+
+/* ---------- inner page head ---------- */
+.phead { background: radial-gradient(70% 90% at 25% 20%, rgba(255,255,255,.9), rgba(255,255,255,0) 70%), var(--silver); border-bottom: 1px solid var(--line); overflow: hidden; }
+.phead .container { padding-block: 64px 56px; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; }
+.phead .word-s { font-family: var(--serif); font-weight: 700; font-size: clamp(56px, 10vw, 140px); line-height: .85; letter-spacing: -.035em; }
+.phead p.sub { margin-top: 20px; color: #3a3936; max-width: 34em; }
+.phead .count { font-family: var(--sans); font-size: 12px; letter-spacing: .18em; font-weight: 600; color: var(--mute); text-align: right; text-transform: uppercase; line-height: 1.8; }
+.phead .count b { display: block; font-family: var(--serif); font-size: 64px; letter-spacing: -.02em; color: var(--ink); line-height: 1; font-weight: 500; }
+.phead.proj .container { grid-template-columns: 1fr minmax(0, 420px); align-items: center; }
+.phead.proj h1 { font-family: var(--serif-ko); font-weight: 700; font-size: clamp(32px, 4.4vw, 56px); line-height: 1.2; letter-spacing: -.02em; margin-top: 16px; }
+.phead.proj .eyebrow { color: var(--point); }
+.phead .shot { box-shadow: var(--shadow-hi); transform: rotate(2.4deg); background: #fff; padding: 10px; }
+.phead .shot img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; }
+
+/* ---------- projects list ---------- */
+.plist { padding-block: 24px 104px; }
+.plist a { display: grid; grid-template-columns: 90px 1fr 380px; gap: 40px; align-items: center; padding-block: 48px; border-bottom: 1px solid var(--line); text-decoration: none; }
+.plist .no { font-family: var(--serif); font-size: 56px; line-height: 1; font-weight: 500; color: #aaa7a0; transition: color .3s; }
+.plist .when { font-family: var(--sans); font-size: 12px; letter-spacing: .14em; color: var(--mute); text-transform: uppercase; }
+.plist b { display: block; font-family: var(--serif-ko); font-size: 26px; font-weight: 700; line-height: 1.35; margin-block: 8px 12px; }
+.plist p { color: #3a3936; max-width: 32em; }
+.plist .more { display: inline-block; margin-top: 20px; }
+.plist .ht { aspect-ratio: 16 / 10; box-shadow: var(--shadow); transform: rotate(-1.6deg); transition: transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s; }
+.plist a:nth-child(even) .ht { transform: rotate(1.6deg); }
+.plist a:hover .ht { transform: rotate(0) translateY(-6px); box-shadow: var(--shadow-hi); }
+.plist a:hover .no, .plist a:hover b { color: var(--point); }
+
+/* ---------- detail ---------- */
+.detail { padding-block: 56px 104px; display: grid; grid-template-columns: 1fr 320px; gap: 72px; align-items: start; }
+.detail .back { grid-column: 1 / -1; justify-self: start; }
+.detail h3 { font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--mute); margin: 56px 0 16px; }
+.detail h3:first-child { margin-top: 0; }
+.detail .lead { font-family: var(--serif-ko); font-size: 21px; line-height: 1.75; font-weight: 500; }
+.detail .team { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; font-family: var(--sans); font-size: 13px; letter-spacing: .04em; }
+.detail .team span { padding: 6px 12px; background: var(--white); border: 1px solid var(--line); }
+.detail .team b { color: var(--point); font-weight: 700; }
+.detail .hint { font-size: 14px; color: var(--mute); margin: -6px 0 14px; }
+.did details { border-bottom: 1px solid var(--line); }
+.did details:first-child { border-top: 1px solid var(--line); }
+.did { counter-reset: did; }
+.did summary { list-style: none; cursor: pointer; position: relative; padding: 14px 40px 14px 40px; font-weight: 500; counter-increment: did; }
+.did summary::-webkit-details-marker { display: none; }
+.did summary::before { content: counter(did, decimal-leading-zero); position: absolute; left: 2px; top: 16px; font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: .06em; color: var(--point); }
+.did summary::after { content: ""; position: absolute; right: 12px; top: 50%; width: 7px; height: 7px; margin-top: -6px; border-right: 1.5px solid var(--mute); border-bottom: 1.5px solid var(--mute); transform: rotate(45deg); transition: transform .3s, margin .3s; }
+.did details[open] summary::after { transform: rotate(225deg); margin-top: -2px; border-color: var(--point); }
+.did summary:hover { color: var(--point); }
+.ev-q { margin-top: 18px; }
+.did details > div { padding: 0 8px 20px 40px; }
+.did details > div p { padding: 0; margin: 0 0 8px; font-size: 15px; color: #3a3936; line-height: 1.75; }
+.did details > div .ev-stats { margin-top: 0; }
+.zoomable { cursor: zoom-in; }
+.lb { position: fixed; inset: 0; z-index: 200; display: none; align-items: center; justify-content: center; flex-direction: column; gap: 14px; padding: 48px 16px 24px; background: rgba(18,18,20,.92); cursor: zoom-out; }
+.lb.on { display: flex; }
+.lb img { max-width: min(1400px, 94vw); max-height: 84vh; width: auto; height: auto; object-fit: contain; background: #fff; box-shadow: 0 20px 60px rgba(0,0,0,.4); }
+.lb p { color: #d7d8da; font-size: 13.5px; text-align: center; max-width: 760px; margin: 0; }
+.lb button { position: absolute; top: 14px; right: 18px; width: 40px; height: 40px; border: 0; background: none; color: #fff; font-size: 28px; line-height: 1; cursor: pointer; }
+.did details p { padding: 0 8px 18px 40px; font-size: 15px; color: #3a3936; line-height: 1.75; }
+.mp-lead { font-size: 17px; line-height: 1.75; }
+.ev-stats { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.ev-stats li { padding: 8px 14px; background: var(--white); border: 1px solid var(--line); font-size: 13px; color: var(--mute); display: flex; align-items: baseline; gap: 6px; }
+.ev-stats b { font-family: var(--serif); font-size: 17px; font-weight: 700; color: var(--ink); }
+.ev-list { list-style: none; margin: 20px 0 0; padding: 0; counter-reset: ev; border-top: 1px solid var(--line); }
+.ev-list li { counter-increment: ev; position: relative; padding: 13px 0 13px 40px; border-bottom: 1px solid var(--line); display: grid; gap: 3px; }
+.ev-list li::before { content: counter(ev, decimal-leading-zero); position: absolute; left: 2px; top: 15px; font-family: var(--sans); font-size: 12px; font-weight: 600; color: var(--point); }
+.ev-list b { font-size: 15.5px; font-weight: 600; }
+.ev-list span { font-size: 14px; color: #5a5d61; }
+.mp-facts { display: grid; grid-template-columns: 1fr 1fr; margin: 20px 0 0; border-top: 1px solid var(--line); }
+.mp-facts div { padding: 12px 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 52px 1fr; gap: 10px; }
+.mp-facts div:nth-child(odd) { padding-right: 20px; }
+.mp-facts dt { font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: .1em; color: var(--point); padding-top: 3px; }
+.mp-facts dd { margin: 0; font-size: 15px; }
+.mp-steps { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; counter-reset: mp; }
+.mp-steps li { counter-increment: mp; background: var(--white); border: 1px solid var(--line); padding: 12px 10px; display: grid; gap: 2px; }
+.mp-steps li::before { content: counter(mp) "회"; font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: .08em; color: var(--point); }
+.mp-steps b { font-size: 14px; font-weight: 700; line-height: 1.4; }
+.mp-steps span { font-size: 12px; color: var(--mute); }
+.mp-safe { list-style: none; margin: 20px 0 18px; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; }
+.mp-safe li { font-size: 14.5px; line-height: 1.65; color: #3a3936; }
+.mp-safe b { display: block; font-size: 14px; color: var(--ink); margin-bottom: 2px; }
+.ktable-wrap { overflow-x: auto; }
+.ktable { width: 100%; min-width: 620px; border-collapse: collapse; font-size: 14px; line-height: 1.55; }
+.ktable th { text-align: left; font-family: var(--sans); font-size: 11.5px; font-weight: 600; letter-spacing: .1em; color: var(--mute); padding: 10px 10px; border-bottom: 1.5px solid var(--ink); }
+.ktable td { padding: 12px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.ktable td:first-child { white-space: nowrap; font-weight: 500; }
+.ktable td:first-child b { color: var(--point); margin-right: 4px; }
+.knote { margin-top: 12px; font-size: 13.5px; color: var(--mute); }
+.detail ul.dots li { position: relative; padding: 12px 0 12px 28px; border-bottom: 1px solid var(--line); }
+.detail ul.dots li:first-child { border-top: 1px solid var(--line); }
+.detail ul.dots li::before { content: ""; position: absolute; left: 4px; top: 1.45em; width: 8px; height: 1.5px; background: var(--point); }
+.nums { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 28px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.nums div { padding: 12px 16px; border-left: 1px solid var(--line); display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.nums div:first-child { border-left: 0; }
+.nums b { font-family: var(--serif); font-weight: 600; font-size: 18px; line-height: 1.3; }
+.nums span { font-size: 13px; color: var(--mute); }
+.chart { margin: 20px 0 0; }
+.chart img { display: block; width: 100%; height: auto; background: #fff; border: 1px solid var(--line); }
+.chart img + img { border-top: 0; }
+.chart figcaption { font-size: 13.5px; color: var(--mute); padding-top: 12px; line-height: 1.6; }
+.gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px 24px; }
+.gallery img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; background: #fff; box-shadow: var(--shadow); transition: transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s; }
+.gallery figure:hover img { transform: translateY(-6px); box-shadow: var(--shadow-hi); }
+.gallery figcaption { font-size: 13.5px; color: var(--mute); padding-top: 12px; }
+.side { background: var(--white); box-shadow: var(--shadow); padding: 28px; display: grid; gap: 18px; font-size: 15px; position: sticky; top: 92px; }
+.side dt { font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--mute); }
+.side dd { margin: 2px 0 14px; font-weight: 500; }
+.side .btn { width: 100%; }
+.side .note { font-size: 13px; color: var(--mute); }
+
+/* ---------- activities ---------- */
+.acts { display: grid; padding-block: 24px 104px; }
+.act { display: grid; grid-template-columns: 1fr 1.25fr; gap: 64px; align-items: start; padding-block: 64px; border-bottom: 1px solid var(--line); }
+.act:last-child { border-bottom: 0; }
+.act .when { font-family: var(--sans); font-size: 12px; letter-spacing: .14em; color: var(--mute); }
+.act h3 { font-family: var(--serif-ko); font-size: 26px; font-weight: 700; line-height: 1.35; margin-block: 8px 14px; }
+.act header p { color: #3a3936; }
+.act .count { display: inline-block; margin-top: 18px; font-family: var(--sans); font-weight: 600; font-size: 11.5px; letter-spacing: .16em; color: var(--point); }
+.act .pics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 28px; }
+.act .pics .ht { aspect-ratio: 1; box-shadow: var(--shadow); }
+.act .pics .ht:nth-child(odd) { transform: rotate(-1.5deg); } .act .pics .ht:nth-child(even) { transform: rotate(1.5deg) translateY(6px); }
+.act ol { background: var(--white); box-shadow: var(--shadow); padding: 8px 24px; }
+.act ol a { display: grid; grid-template-columns: 72px 1fr auto; gap: 14px; padding: 13px 0; border-bottom: 1px solid var(--line); text-decoration: none; font-size: 15px; }
+.act ol li:last-child a { border-bottom: 0; }
+.act ol .d { color: var(--mute); font-variant-numeric: tabular-nums; font-family: var(--sans); font-size: 13.5px; padding-top: 1px; }
+.act ol .ar { color: #a9a6a0; }
+.act ol .tx small { display: block; margin-top: 4px; font-size: 13px; line-height: 1.6; color: var(--mute); }
+.act-r { display: grid; gap: 28px; }
+.evt { background: var(--white); box-shadow: var(--shadow); padding: 20px 24px 24px; display: grid; gap: 22px; }
+.evt-h { font-family: var(--sans); font-size: 11.5px; font-weight: 600; letter-spacing: .16em; color: var(--mute); margin: 0; }
+.evt figure { margin: 0; display: grid; gap: 6px; }
+.evt .ht img { height: auto; display: block; }
+.evt figcaption { font-size: 15px; padding-top: 6px; }
+.evt figcaption .d { color: var(--mute); font-family: var(--sans); font-size: 13.5px; margin-right: 14px; font-variant-numeric: tabular-nums; }
+.act ol a:hover .tx, .act ol a:hover .ar { color: var(--point); }
+
+/* ---------- about ---------- */
+.about { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; padding-block: 56px 104px; }
+.about > div { background: var(--white); box-shadow: var(--shadow); padding: 32px; }
+.about h3 { font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: .2em; color: var(--point); padding-bottom: 14px; border-bottom: 1.5px solid var(--ink); }
+.about li { display: grid; grid-template-columns: 1fr auto; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.about li:last-child { border-bottom: 0; }
+.about li span:last-child { color: var(--mute); text-align: right; font-variant-numeric: tabular-nums; }
+.about li small { display: block; color: var(--mute); font-size: 13px; }
+
+/* ---------- contact ---------- */
+.contact { padding-block: 80px 120px; display: grid; justify-items: start; gap: 28px; }
+.contact .mail { font-family: var(--serif); font-weight: 500; font-size: clamp(22px, 3vw, 34px); letter-spacing: -.01em; line-height: 1.2; text-decoration: none; user-select: all; border-bottom: 2px solid var(--ink); }
+.contact .mail:hover { color: var(--point); border-color: var(--point); }
+.contact .row { display: flex; flex-wrap: wrap; gap: 12px; }
+
+footer { background: var(--black); color: #a9a7a2; font-size: 13px; padding-bottom: env(safe-area-inset-bottom, 0px); }
+footer .container { padding-block: 56px 36px; display: grid; grid-template-columns: 1fr auto; gap: 24px 40px; align-items: end; }
+footer .fw { font-family: var(--serif); font-weight: 700; font-size: clamp(40px, 6vw, 72px); line-height: .9; letter-spacing: -.03em; color: #fff; }
+footer .fw span { color: var(--point); }
+footer nav { display: flex; gap: 24px; font-family: var(--sans); font-size: 12px; letter-spacing: .14em; }
+footer nav a { text-decoration: none; color: #e8e6e1; }
+footer nav a:hover { color: #fff; border-bottom: 1px solid var(--point); }
+footer .small { grid-column: 1 / -1; padding-top: 24px; border-top: 1px solid #2a2a29; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+/* routing */
+.js [data-view] { display: none; }
+.js [data-view].on { display: block; }
+
+@media (max-width: 1000px) {
+  .hero .container { grid-template-columns: 1fr 1fr; }
+  .stage { grid-column: 1 / -1; grid-row: 2; justify-self: center; width: min(520px, 100%); margin-top: -0.32em; }
+  .hero .left { grid-column: 1; grid-row: 3; margin-top: 88px; }
+  .hero .right { grid-column: 2; grid-row: 3; margin-top: 88px; }
+  .ink .container { grid-template-columns: 1fr; gap: 40px; }
+  .step:not(:last-child)::after { content: "↓"; right: auto; top: auto; left: 18px; bottom: -32px; }
+  .field .container { grid-template-columns: 1fr; gap: 48px; padding-block: 72px; }
+  .figs ul { grid-template-columns: 1fr 1fr; }
+  .figs li { padding: 32px 20px; }
+  .figs li:nth-child(3) { border-left: 0; padding-left: 0; }
+  .figs li:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .cards { grid-template-columns: 1fr 1fr; }
+  .plist a { grid-template-columns: 64px 1fr; }
+  .plist .ht { grid-column: 1 / -1; }
+  .detail { grid-template-columns: 1fr; gap: 40px; }
+  .side { position: static; }
+  .act { grid-template-columns: 1fr; gap: 32px; }
+  .phead.proj .container { grid-template-columns: 1fr; }
+  .phead.proj .shot { max-width: 420px; }
+}
+@media (max-width: 760px) {
+  .container { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .strip .l { display: none; } .strip .container { justify-content: flex-end; }
+  .bar .container { grid-template-columns: 1fr; height: auto; gap: 6px; padding-top: 14px; padding-bottom: 4px; justify-items: center; }
+  .bar .mail-s { display: none; }
+  .logo { grid-row: 1; font-size: 24px; }
+  .nametag { left: 12px; }
+  .nametag .cord { height: 3px; }
+  .nametag .tagcard { width: 32px; min-height: 42px; padding: 5px 0 6px; gap: 4px; border-radius: 4px; }
+  .nametag .slot { width: 10px; }
+  .nametag b { font-size: 9.5px; }
+  .menu { grid-row: 2; gap: 20px; max-width: 100%; overflow-x: auto; scrollbar-width: none; padding-inline: 2px; }
+  .menu a { padding-block: 10px; font-size: 12px; }
+  .hero .container { grid-template-columns: 1fr; padding-top: 32px; }
+  .word small { margin-bottom: 14px; letter-spacing: .3em; }
+  .stage { height: 380px; }
+  .hero .left, .hero .right { grid-column: 1; }
+  .hero .left { grid-row: 3; margin-top: 64px; }
+  .hero .right { grid-row: 4; margin-top: 36px; text-align: left; justify-items: start; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .hero .left .btn { width: 100%; }
+  .pj { grid-template-columns: 88px 1fr; gap: 16px; }
+  .field .container { padding-block: 56px; }
+  .figs b { font-size: 44px; }
+  .cards { gap: 28px 14px; }
+  .best { padding-block: 64px 72px; }
+  .best header { flex-direction: column; align-items: start; }
+  .phead .container { grid-template-columns: 1fr; padding-block: 44px 40px; gap: 24px; }
+  .phead .count { text-align: left; }
+  .plist a { grid-template-columns: 1fr; gap: 16px; padding-block: 36px; }
+  .plist .no { font-size: 40px; }
+  .plist b { font-size: 22px; }
+  .nums { grid-template-columns: 1fr; }
+  .mp-facts, .mp-safe { grid-template-columns: 1fr; }
+  .mp-facts div:nth-child(odd) { padding-right: 0; }
+  .mp-steps { grid-template-columns: repeat(3, 1fr); }
+  .nums div { border-left: 0; border-top: 1px solid var(--line); }
+  .nums div:first-child { border-top: 0; }
+  .gallery { grid-template-columns: 1fr; }
+  .act .pics { grid-template-columns: repeat(2, 1fr); }
+  .act ol { padding: 4px 16px; }
+  .act ol a { grid-template-columns: 1fr auto; gap: 2px 12px; }
+  .act ol .d { grid-column: 1 / -1; }
+  .act ol .ar { grid-row: 2; grid-column: 2; }
+  .about { grid-template-columns: 1fr; gap: 20px; }
+  .about > div { padding: 24px 20px; }
+  footer .container { grid-template-columns: 1fr; }
+  footer nav { flex-wrap: wrap; gap: 12px 20px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+
+<div class="strip">
+  <div class="container">
+    <span class="r"><a href="https://blog.naver.com/2yo__on7" target="_blank" rel="noopener">Blog</a></span>
+  </div>
+</div>
+<header class="bar">
+  <div class="container">
+    <nav class="menu" aria-label="주요 메뉴">
+      <a href="#home">HOME</a>
+      <a href="#projects">PROJECTS</a>
+      <a href="#activities">ACTIVITIES</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+    <a class="logo" href="#home" aria-label="Park Yoon Seon, 홈으로">Park Y<span class="eyes" aria-hidden="true"><span class="eye"><i></i></span><span class="eye"><i></i></span></span>n Seon<span>.</span></a>
+  </div>
+  <a class="nametag" href="#contact" aria-label="박윤선 명찰, 연락처로 이동"><span class="cord"></span><span class="tagcard"><span class="slot"></span><b>박윤선</b></span></a>
+</header>
+
+<main>
+<!-- ================= HOME ================= -->
+<div data-view="home">
+  <section class="hero">
+    <div class="container">
+      <p class="word" aria-hidden="true"><small>HRD · DATA · FIELD</small>PORTFOLIO</p>
+      <div class="stage" id="stage">
+        <div class="deck" id="deck">
+          <a class="card pos-f" href="#kyobo" data-tag="KYOBO:ON 신입사원 온보딩 — 2026" aria-label="KYOBO:ON 신입사원 온보딩"><div class="ht"><img src="assets/work/kyobo_on_poster.jpg" alt="" width="1086" height="1448" style="object-position:50% 6%"></div><span class="sel"><i></i><i></i><i></i><i></i></span></a>
+          <a class="card pos-r" href="#job-market" data-tag="텍스트가 말하는 취업 시장 — 2026" aria-label="텍스트가 말하는 취업 시장"><div class="ht"><img src="assets/work/tm_final_cover.jpg" alt="" width="1100" height="618" style="object-position:0% 50%"></div><span class="sel"><i></i><i></i><i></i><i></i></span></a>
+          <a class="card pos-l" href="#sports-hrd" data-tag="스포츠 인력 담론의 변화 — 2026" aria-label="스포츠 인력 담론의 변화"><div class="ht"><img src="assets/work/tm_mid_p01.jpg" alt="" width="1100" height="618" style="object-position:0% 50%"></div><span class="sel"><i></i><i></i><i></i><i></i></span></a>
+        </div>
+        <p class="tag" id="tag" aria-live="polite">KYOBO:ON 신입사원 온보딩 — 2026</p>
+        <div class="pager" id="pager"><button type="button" aria-label="1번 프로젝트" aria-current="true"></button><button type="button" aria-label="2번 프로젝트"></button><button type="button" aria-label="3번 프로젝트"></button></div>
+        <div class="floor"></div>
+      </div>
+      <div class="left">
+        <h1>현장과 교육을<br>데이터로 잇습니다</h1>
+        <p>교육과정을 설계하고, 그 효과를 텍스트와 숫자로 확인하는 박윤선입니다.</p>
+        <a class="btn" href="#projects">View Projects →</a>
+      </div>
+      <div class="right">
+        <div><b>Creative HRD</b><span>인천대 창의인재개발학과</span></div>
+        <div><b>Data Science</b><span>데이터과학과 복수전공</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ink" aria-label="일하는 방식">
+    <div class="container">
+      <div class="step"><span class="n">01</span><div><b>설계<em>어떻게 가르칠까</em></b><strong>니즈를 파악하고 요구에 맞는 활동을 기획합니다.</strong></div></div>
+      <div class="step"><span class="n">02</span><div><b>현장<em>어떻게 닿을까</em></b><strong>기획한 내용이 고객 및 학습자에게 어떻게 닿을 수 있는지 직접 보고 담아냅니다.</strong></div></div>
+      <div class="step"><span class="n">03</span><div><b>확인<em>어떻게 달라졌나</em></b><strong>변화를 데이터로 확인하고 본질에 빗대어 확인한 뒤 다음 설계로 넘어갑니다.</strong></div></div>
+    </div>
+  </section>
+
+  <section class="field">
+    <div class="container">
+      <div>
+        <p class="eyebrow">Field Work —</p>
+        <h2>On the<br>Field</h2>
+        <p>기자단 활동과 여러 서포터즈 활동을 통해 대회 현장, 체육관, 강의실을 찾아 카드뉴스, 기사, 릴스, 인스타그램 콘텐츠 30건을 제작했습니다.</p>
+        <a class="btn" href="#activities">Explore Activities →</a>
+      </div>
+      <figure class="photo">
+        <div class="frame">
+          <img src="assets/posts/bscbsc01_223185054820.jpg" alt="부산실내빙상장 입구" width="900" height="506" loading="lazy">
+        </div>
+        <figcaption><span>부산시체육회 기자단 · 부산실내빙상장</span><span>2023.08</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="figs" aria-label="요약">
+    <div class="container">
+      <ul>
+        <li><b>3</b><span>Projects</span><small>온보딩 설계 · 텍스트마이닝 2건</small></li>
+        <li><b>4</b><span>Activities</span><small>기자단 2곳 · 서포터즈 2곳</small></li>
+        <li><b>30</b><span>Contents</span><small>기사 · 카드뉴스 · 영상</small></li>
+        <li><b>940</b><span>TOEIC</span><small>TOEIC Speaking IH</small></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="best container">
+    <header><h2>Activities</h2><a class="more" href="#activities">View All →</a></header>
+    <div class="cards">
+      <a href="#activities"><div class="ht"><img src="assets/posts/kosad_blog_223007111458.jpg" alt="" width="900" height="900" loading="lazy"></div><p>대한장애인체육회 소셜기자단</p><small>카드뉴스 9편</small></a>
+      <a href="#activities"><div class="ht"><img src="assets/posts/bscbsc01_223327584793.jpg" alt="" width="900" height="675" loading="lazy"></div><p>부산시체육회 기자단</p><small>기사 7편</small></a>
+      <a href="#activities"><div class="ht"><img src="assets/posts/2yo__on7_223033743535.jpg" alt="" width="900" height="900" loading="lazy"></div><p>KBS미디어 평생교육센터 서포터즈</p><small>콘텐츠 7편</small></a>
+      <a href="#activities"><div class="ht"><img src="assets/posts/cwnu_card_1.jpg" alt="" width="1080" height="1080" loading="lazy"></div><p>학생교육서포터즈</p><small>릴스 · 카드뉴스 · 소식지</small></a>
+    </div>
+  </section>
+</div>
+
+<!-- ================= PROJECTS ================= -->
+<div data-view="projects">
+  <section class="phead"><div class="container">
+    <div><p class="word-s">Projects</p><p class="sub">교내에서 했던 활동입니다. 교육을 설계하고 데이터로 질문에 답했습니다. 활동을 클릭하시면 자세한 내용을 보실 수 있습니다.</p></div>
+    <p class="count"><b>04</b>Selected Work</p>
+  </div></section>
+  <div class="container plist">
+    <a href="#sports-hrd"><span class="no">01</span>
+      <div><p class="when">2026 Spring · 텍스트마이닝 프로젝트</p><b>스포츠 산업 성장 담론의 변화</b><p>15년치 기사를 통해 스포츠 인력과 역량 개발 논의가 어떻게 다뤄지고 있는지 확인했습니다. 결과를 바탕으로 역량 개발 지표를 반영하자고 제안했습니다.</p><span class="more">View Project →</span></div>
+      <div class="ht"><img src="assets/work/tm_mid_p01.jpg" alt="스포츠 산업 성장 담론의 변화 발표 표지" width="1100" height="618" loading="lazy"></div></a>
+    <a href="#job-market"><span class="no">02</span>
+      <div><p class="when">2026 Spring · 텍스트마이닝 프로젝트</p><b>텍스트가 말하는 취업 시장</b><p>선행 지표로 유튜브 댓글, 뉴스 기사, 네이버 키워드 검색량을 사용하였습니다. 선행 지표가 한 달 뒤 취업자 수 변화를 예측할 수 있는지 검증했습니다.</p><span class="more">View Project →</span></div>
+      <div class="ht"><img src="assets/work/tm_final_cover.jpg" alt="텍스트가 말하는 취업 시장 발표 표지" width="1100" height="618" loading="lazy"></div></a>
+    <a href="#you-turn"><span class="no">03</span>
+      <div><p class="when">2026 Spring · 비즈니스 프로그래밍3</p><b>YOU-TURN 유튜브 취향 타임라인 서비스</b><p>알고리즘 필터 버블에 갇혀 잊힌 예전 취향을 상기시켜 주는 서비스의 사업계획서를 제작했습니다. YouTube Data API 호출을 통해 경쟁사 분석부터 리스크까지 기획했습니다.</p><span class="more">View Project →</span></div>
+      <div class="ht"><img src="assets/work/yt_cover.jpg" alt="YOU-TURN 발표 표지" width="1100" height="618" loading="lazy"></div></a>
+    <a href="#kyobo"><span class="no">04</span>
+      <div><p class="when">2026 Fall · 캡스톤디자인</p><b>KYOBO:ON 교보생명 신입사원 온보딩</b><p>신입사원의 이탈을 데이터로 확인한 뒤 입사 후 6개월 적응을 돕는 집합교육, 멘토링 활동을 설계하고 웹사이트로 구현했습니다. 교보생명 외 다른 기업에도 적용할 수 있는 범용적 온보딩 프로그램을 기획하고자 하였습니다.</p><span class="more">View Project →</span></div>
+      <div class="ht"><img src="assets/work/kyobo_on_poster.jpg" alt="KYOBO:ON 온보딩 프로그램 표지" width="1086" height="1448" loading="lazy" style="object-position:50% 6%"></div></a>
+  </div>
+</div>
+
+<!-- project: KYOBO:ON -->
+<div data-view="kyobo">
+  <section class="phead proj"><div class="container">
+    <div><p class="eyebrow">Project 04 — 2026</p><h1>KYOBO:ON<br>신입사원 온보딩</h1></div>
+    <div class="shot"><img src="assets/work/kyobo_login.jpg" alt="KYOBO:ON 사이트 첫 화면" width="1440" height="1000"></div>
+  </div></section>
+  <div class="container detail">
+    <a class="back more" href="#projects">← All Projects</a>
+    <div>
+      <h3>Overview</h3>
+      <p class="lead">가상의 교보생명 HR팀이라고 가정한 뒤 신입사원을 위한 온보딩 프로그램을 기획했습니다. 6개월 집중 지원과 입사 1년 점검으로, 적응 기간을 혼자 버티지 않도록 하는 관계 중심의 온보딩입니다. 집합 교육, 멘토링, 동기 조별 활동을 하나의 흐름으로 묶었고, 교육과정 설계부터 운영에 필요한 웹사이트까지 직접 제작했습니다.</p>
+      <div class="nums"><div><b>12</b><span>차시 교육과정</span></div><div><b>6개월</b><span>집중 지원 + 입사 1년 점검</span></div><div><b>60명</b><span>6명 × 10개 조</span></div></div>
+      <h3>What I Did</h3>
+      <p class="hint">항목을 누르면 자세한 내용이 열립니다.</p>
+      <div class="did">
+        <details><summary>멘토링 활동 전체 기획</summary><p>같은 부서 선배 1:1 매칭부터 6회 멘토링, 평가, 활동비 정산까지 운영 전 과정을 짰습니다.</p></details>
+        <details><summary>평가 지표와 루브릭 설계</summary><p>Kirkpatrick 4단계에 맞춰 지표를 정하고, 루브릭과 행동 관찰 체크리스트를 만들었습니다.</p></details>
+        <details><summary>홈페이지 전체 제작</summary><p>신입사원·멘토·팀장·인사팀이 각자 필요한 화면을 보는 사이트를 만들었습니다.</p></details>
+        <details><summary>가상 시뮬레이션 운영</summary><p>가상 명단으로 12차시와 멘토링을 두 차례 돌려 보며 점검 사항 160여 건을 찾아 정리했습니다.</p></details>
+        <details><summary>데이터 및 근거 조사</summary><p>자료조사 자동화 하네스를 직접 설계해 근거를 모으고, 결론을 6가지 설계 결정에 반영했습니다.</p></details>
+        <details><summary>전체 피드백 · 정리</summary><p>팀원 작업물 전체에 피드백을 주고 하나로 정리했습니다.</p></details>
+      </div>
+      <h3>Evidence — 근거를 찾아 설계에 반영</h3>
+      <p class="mp-lead">설계하면서 생긴 질문 다섯 가지를 직접 만든 자료조사 하네스로 조사했습니다. 항목을 누르면 찾은 내용이 열립니다.</p>
+      <div class="did ev-q">
+        <details><summary>온보딩 기간은 얼마가 적당한가</summary><div>
+          <p>입문교육으로 끝내지 않고 입사 1년 차까지 접점을 이어 가는 장기형이 낫다고 판단했습니다. 국내 대기업 신입의 16.1%가 1년 안에 퇴사합니다.</p>
+          <p>체크인은 직속 매니저가 맡고, 90일 면담에 더해 6·9개월 시점에도 점검하는 쪽이 첫해 유지와 더 연관이 있었습니다.</p>
+        </div></details>
+        <details><summary>왜 6개월인가 — 설계를 고친 6가지</summary><div>
+          <ul class="ev-stats"><li><b>29</b>출처</li><li><b>21</b>근거 카드</li><li><b>8 + 2</b>핵심 · 참신 자료</li><li><b>17/17</b>인용 원문 대조 일치</li></ul>
+          <ol class="ev-list">
+        <li><b>‘6개월 온보딩’ → ‘6개월 집중 지원 + 입사 1년 점검’</b><span>신입 1만1천 명의 업무 네트워크가 24주 뒤에도 기존 직원에 못 미쳤습니다.</span></li>
+        <li><b>‘퇴사가 몰리는 3개월’ → ‘첫해 퇴사 위험이 큰 시기의 중간 점검’</b><span>3개월 집중을 말하는 조사와 1~3년 분산을 말하는 조사가 서로 충돌했습니다.</span></li>
+        <li><b>1~3개월 차에 팀장·멘토와의 짧은 체크인 추가 검토</b><span>첫 90일 집중 지원과 30·60·90일 면담 권고가 있습니다.</span></li>
+        <li><b>보고·메일·회의록 같은 실행 기술은 현업 적용으로</b><span>절차에 가까운 지식은 나눠 배워도 기억 효과가 크지 않았습니다.</span></li>
+        <li><b>팀장은 체크인과 관찰 역할로 제한</b><span>과부하된 관리자는 신입을 제대로 지원하지 못했습니다.</span></li>
+        <li><b>경력직도 같은 6개월에 참여, 활동 내용만 나눔</b><span>대기업 1년 안 퇴사자의 42.8%가 경력직입니다.</span></li>
+      </ol>
+        </div></details>
+        <details><summary>관계 중심 온보딩이란 무엇인가</summary><div>
+          <p>500대 기업 중 온보딩을 운영하지 않는 곳은 3.8%, 멘토링 시행은 71.4%였습니다. 제도는 이미 많기 때문에, ‘제도가 있는가’가 아니라 ‘관계가 실제로 생기는가’를 차별점으로 잡았습니다.</p>
+          <p>조기 퇴사 이유로는 직무 적합성(58.9%)이 인간관계(23.4%)보다 많이 꼽혀, 관계를 퇴사의 주원인으로 내세우지 않았습니다.</p>
+        </div></details>
+        <details><summary>신입사원 1인에게 드는 비용은 얼마인가</summary><div>
+          <p>‘1인당 1억 원 이상’이라는 말의 근거를 확인했습니다. 국내 측정치는 2013년 경총 조사의 약 5,960만 원(2026년 물가로 약 7,700만 원)이었고, 1억 원대 수치는 출처가 분명하지 않았습니다.</p>
+          <p>그래서 인건비를 넣으면 3천만~1억 원 미만, 교육 직접비만이면 3천만 원 미만으로 나눠 정리했습니다.</p>
+        </div></details>
+        <details><summary>멘토는 어떻게 지원해야 하는가</summary><div>
+          <p>인사고과 반영만 하기보다 인증서·시상 같은 공개 인정을 함께 주는 쪽을 골랐습니다. 공개 시상만 도입해도 멘토 지원이 12% 늘었다는 연구가 있습니다.</p>
+          <p>고과는 점수 가점보다 멘토 활동을 정식 업무로 기록하는 방식으로 설계하고, 금전 수당을 먼저 늘리지는 않았습니다. 멘토의 64.6%가 돈이 주된 동기가 아니라고 답했습니다.</p>
+        </div></details>
+      </div>
+      <p class="knote">근거마다 확실성을 함께 따져, 직접 검증되지 않은 숫자는 설득 근거로 내세우지 않았습니다.</p>
+      <h3>Mentoring Plan</h3>
+      <p class="mp-lead">첫해 퇴사 위험이 큰 입사 후 6개월 동안, 같은 부서 선배가 1:1로 곁에서 집합교육 내용을 각자의 부서 상황에 맞게 적용하도록 돕습니다.</p>
+      <dl class="mp-facts">
+        <div><dt>매칭</dt><dd>같은 부서 입사 3~5년 차 선배와 1:1 (멘토가 부족하면 1:2)</dd></div>
+        <div><dt>횟수</dt><dd>6개월 동안 월 1회 이상, 최소 6회</dd></div>
+        <div><dt>연계</dt><dd>회차마다 같은 달 집합교육 2개 차시와 연결</dd></div>
+        <div><dt>지원</dt><dd>1쌍에 월 20만 원 활동비, 멘토는 인사고과 반영</dd></div>
+      </dl>
+      <ol class="mp-steps">
+        <li><b>관계 시작</b><span>1~2차시 연계</span></li>
+        <li><b>일하는 방식</b><span>3~4차시 연계</span></li>
+        <li><b>고객과 협업</b><span>5~6차시 연계</span></li>
+        <li><b>중간 점검</b><span>7~8차시 연계</span></li>
+        <li><b>성장</b><span>9~10차시 연계</span></li>
+        <li><b>마무리</b><span>11~12차시 연계</span></li>
+      </ol>
+      <ul class="mp-safe">
+        <li><b>익명 멘토 평가</b>같은 부서 선배를 부담 없이 평가하도록 결과는 인사팀만 봅니다.</li>
+        <li><b>적응 신호</b>멘토가 매달 네 영역의 행동 단계를 고르고, '지원 필요'가 나오면 인사팀이 1주 안에 면담합니다.</li>
+        <li><b>비밀 유지</b>대화 내용은 보고서에 적지 않고, 멘티의 팀장에게도 전하지 않습니다.</li>
+        <li><b>교체 창구</b>2회 이후 4회 전까지 누구나 비공개로 멘토 교체를 요청할 수 있습니다.</li>
+      </ul>
+      <a class="more" href="https://peach-primula-0e5.notion.site/KYOBO-ON-40a2e3b3723081f4a4b5f9d86a553508" target="_blank" rel="noopener">멘토링 기획안 전체 보기 ↗</a>
+      <h3>Evaluation — Kirkpatrick 4단계</h3>
+      <p class="hint">반응에서 조직 성과까지, 단계마다 다른 도구로 확인하도록 지표를 정했습니다.</p>
+      <div class="ktable-wrap"><table class="ktable">
+        <thead><tr><th>단계</th><th>무엇을 보나</th><th>도구</th><th>기준</th><th>시점</th></tr></thead>
+        <tbody>
+          <tr><td><b>L1</b> 반응</td><td>멘토링이 도움이 됐는가</td><td>멘토 평가, 만족도 설문</td><td>5점 중 평균 4.0 이상</td><td>매월 · 6회 후</td></tr>
+          <tr><td><b>L2</b> 학습</td><td>회차별 필수 내용을 다뤘는가</td><td>월별 보고서의 필수 내용 체크</td><td>수행률 80% 이상</td><td>매월</td></tr>
+          <tr><td><b>L3</b> 행동</td><td>적응 행동이 늘었는가</td><td>적응도 자가진단, 팀장 행동 관찰 체크리스트</td><td>사후 점수가 사전보다 상승</td><td>1 · 4 · 6회</td></tr>
+          <tr><td><b>L4</b> 결과</td><td>조직 성과로 이어졌는가</td><td>조직 몰입 설문, 6회 완료 비율, 6개월·1년 퇴사율</td><td>이전 기수보다 개선</td><td>수료 시 · 입사 1년</td></tr>
+        </tbody>
+      </table></div>
+      <p class="knote">퇴사율은 온보딩과 멘토링의 통합 성과로 보고, 멘토 평가 상위·하위 쌍의 변화를 비교해 멘토링의 기여를 보완합니다.</p>
+      <h3>Materials</h3>
+      <div class="gallery">
+        <figure><img src="assets/work/kyobo_on_poster.jpg" alt="KYOBO:ON 온보딩 프로그램 포스터" width="1086" height="1448" loading="lazy" style="object-position:50% 20%"><figcaption>프로그램 안내 포스터</figcaption></figure>
+        <figure><img src="assets/work/kyobo_l1.jpg" alt="1차시 교보를 만나다 강의 표지" width="1600" height="900" loading="lazy"><figcaption>1차시 강의안 · 교보를 만나다</figcaption></figure>
+        <figure><img src="assets/work/kyobo_l4.jpg" alt="4차시 내 부서의 업무 지도 강의 표지" width="1600" height="900" loading="lazy"><figcaption>4차시 강의안 · 내 부서의 업무 지도</figcaption></figure>
+        <figure><img src="assets/work/kyobo_ot_mentee.png" alt="KYOBO:ON 멘토링 오리엔테이션 카드 표지" width="1080" height="1350" loading="lazy"><figcaption>멘토링 오리엔테이션 카드</figcaption></figure>
+      </div>
+    </div>
+    <aside class="side">
+      <dl><dt>기간</dt><dd>2026년 2학기</dd><dt>구분</dt><dd>캡스톤디자인</dd><dt>대상</dt><dd>교보생명 신입사원</dd><dt>팀</dt><dd>4인 팀에서 전체 작업의 절반 담당</dd><dt>키워드</dt><dd>교육과정 설계, 온보딩, 멘토링</dd></dl>
+      <a class="btn" href="https://creative-alfajores-1fc702.netlify.app/" target="_blank" rel="noopener">사이트 보기 ↗</a>
+    </aside>
+  </div>
+</div>
+
+<!-- project: job market -->
+<div data-view="job-market">
+  <section class="phead proj"><div class="container">
+    <div><p class="eyebrow">Project 02 — 2026</p><h1>텍스트가 말하는<br>취업 시장</h1></div>
+    <div class="shot"><img src="assets/work/tm_final_cover.jpg" alt="발표 표지" width="1100" height="618"></div>
+  </div></section>
+  <div class="container detail">
+    <a class="back more" href="#projects">← All Projects</a>
+    <div>
+      <h3>Question</h3>
+      <p class="lead">공식 고용 통계는 발표까지 일정 시간이 소요됩니다. 그렇다면 취업 관련 텍스트 데이터로 채용 시장 변화를 예측할 수 있을까요?</p>
+      <div class="nums"><div><b>0.748</b><span>최종 모형 R²</span></div><div><b>93,580</b><span>뉴스 기사</span></div><div><b>18,281</b><span>유튜브 댓글</span></div></div>
+      <h3>Method</h3>
+      <ol class="ev-list">
+        <li><b>수집</b><span>2021.03 ~ 2026.04 데이터를 모았습니다. 유튜브 Data API로 ‘취업 준비, 공채, 면접 후기’ 등 12개 키워드 영상의 댓글 18,281개, 빅카인즈로 취업 뉴스 93,580건(‘별세·부고·대학’ 기사 제외), 네이버 데이터랩 취업 키워드 검색량, 한국은행 기준금리, 통계청 월별 취업자 수입니다.</span></li>
+        <li><b>변수 설계</b><span>유튜브 댓글 감성(X1), 뉴스 감성(X2), 뉴스 네트워크 중심성(X3), 네이버 검색량(X4)으로 다음 달 취업자 수(Y)를 설명하도록 1개월 시차를 뒀습니다. 공채 시즌 같은 계절성은 전년동월비로 지웠고, 기준금리는 통제변수로 넣었습니다.</span></li>
+        <li><b>감성분석 — 두 모델 비교</b><span>단어 단위로 긍정·부정을 판단하는 KNU 감성사전과 문맥을 읽는 사전학습 모델 KoELECTRA로 같은 텍스트를 각각 점수화했습니다.</span></li>
+        <li><b>검증</b><span>피어슨 상관분석으로 관계를 먼저 보고, 감성 모델 조합 4가지 × 금리 통제 유무로 다중회귀 모형 8개를 비교했습니다. VIF로 다중공선성도 확인했습니다.</span></li>
+      </ol>
+      <p class="knote">유튜브 댓글은 취업 준비생 당사자의 시각, 뉴스는 미디어의 시각을 담는다고 보고 두 출처를 함께 썼습니다.</p>
+      <h3>Result</h3>
+      <figure class="chart"><img src="assets/work/jm_y.webp" alt="취업자 수 전년동월비 막대 그래프, 2022년 3%대에서 2026년 0%대로 둔화" width="2000" height="654" loading="lazy"><img src="assets/work/jm_x3.webp" alt="뉴스 네트워크 중심성 전년동월비 막대 그래프, 2022년 증가에서 2025년 감소로 전환" width="2000" height="705" loading="lazy"><figcaption>취업자 수(Y)와 뉴스 네트워크 중심성(X3)의 전년동월비. 두 흐름 모두 2022년 이후 함께 둔화됩니다.</figcaption></figure>
+      <p class="hint" style="margin-top:28px">다음 달 취업자 수와의 상관 (피어슨)</p>
+      <div class="ktable-wrap"><table class="ktable">
+        <thead><tr><th>변수</th><th>r</th><th>p</th><th>유의</th></tr></thead>
+        <tbody>
+          <tr><td>뉴스 네트워크 중심성</td><td><b>0.714</b></td><td>0.000</td><td>O</td></tr>
+          <tr><td>유튜브 감성 (KoELECTRA)</td><td>0.578</td><td>0.000</td><td>O</td></tr>
+          <tr><td>유튜브 감성 (KNU)</td><td>0.528</td><td>0.000</td><td>O</td></tr>
+          <tr><td>뉴스 감성 (KNU)</td><td>0.401</td><td>0.004</td><td>O</td></tr>
+          <tr><td>네이버 검색량</td><td>0.209</td><td>0.150</td><td>X</td></tr>
+          <tr><td>뉴스 감성 (KoELECTRA)</td><td>0.053</td><td>0.716</td><td>X</td></tr>
+          <tr><td>기준금리</td><td>−0.541</td><td>0.000</td><td>O</td></tr>
+        </tbody>
+      </table></div>
+      <p class="hint" style="margin-top:28px">다중회귀 모형 8개 비교</p>
+      <div class="ktable-wrap"><table class="ktable">
+        <thead><tr><th>유튜브 감성</th><th>뉴스 감성</th><th>금리 통제</th><th>R²</th><th>Adj R²</th></tr></thead>
+        <tbody>
+          <tr><td>KNU</td><td>KNU</td><td>X</td><td>0.569</td><td>0.530</td></tr>
+          <tr><td><b>KNU</b></td><td><b>KNU</b></td><td><b>O</b></td><td><b>0.748</b></td><td><b>0.718</b></td></tr>
+          <tr><td>KoELECTRA</td><td>KNU</td><td>X</td><td>0.566</td><td>0.526</td></tr>
+          <tr><td>KoELECTRA</td><td>KNU</td><td>O</td><td>0.739</td><td>0.708</td></tr>
+          <tr><td>KNU</td><td>KoELECTRA</td><td>X</td><td>0.578</td><td>0.540</td></tr>
+          <tr><td>KNU</td><td>KoELECTRA</td><td>O</td><td>0.747</td><td>0.718</td></tr>
+          <tr><td>KoELECTRA</td><td>KoELECTRA</td><td>X</td><td>0.567</td><td>0.527</td></tr>
+          <tr><td>KoELECTRA</td><td>KoELECTRA</td><td>O</td><td>0.735</td><td>0.704</td></tr>
+        </tbody>
+      </table></div>
+      <p class="knote">가장 우수한 모형은 유튜브 KNU + 뉴스 KNU + 금리 통제로, 다음 달 취업자 수 변화의 74.8%를 설명합니다. 금리를 통제하면 설명력이 0.57에서 0.73~0.75로 올라갑니다.</p>
+      <ol class="ev-list" style="margin-top:28px">
+        <li><b>뉴스 네트워크 중심성 — 가장 강한 변수</b><span>8개 모형 모두에서 p = 0.000이었습니다. 취업 관련 키워드가 촘촘하게 연결될수록 다음 달 취업자 수가 늘었습니다.</span></li>
+        <li><b>유튜브 댓글 감성 — 유의</b><span>KNU 기준 감성 점수가 1 오르면 다음 달 취업자 수 전년동월비가 1.0~1.4%p 올랐습니다. KoELECTRA도 같은 방향이었지만 금리와 함께 넣으면 VIF가 10을 넘어 해석에 주의가 필요했습니다.</span></li>
+        <li><b>네이버 검색량 — 금리를 통제하면 유의</b><span>통제 전에는 유의하지 않았지만(p = 0.413~0.640), 금리를 통제하자 p = 0.011~0.044로 유의해졌습니다.</span></li>
+        <li><b>뉴스 감성 — 기각</b><span>두 모델 모두 유의하지 않았습니다. 뉴스의 감성 표현보다, 담론이 얼마나 한곳에 모이는지가 시장을 더 잘 반영했습니다.</span></li>
+      </ol>
+      <figure class="chart" style="margin-top:28px"><img src="assets/work/jm_network.webp" alt="뉴스 키워드 네트워크 비교, 2022년 4월은 공채 중심, 2025년 12월은 준비와 일자리 중심" width="2000" height="993" loading="lazy"><figcaption>뉴스 키워드 네트워크. 중심성이 가장 높았던 2022.04는 ‘공채·모집’, 가장 낮았던 2025.12는 ‘준비·일자리·AI’가 중심입니다. 채용 소식보다 정책 지원 이야기가 늘었습니다.</figcaption></figure>
+      <p class="knote">결론: 유튜브 댓글 감성, 뉴스 네트워크 중심성, 네이버 검색량은 다음 달 취업 시장 변화를 예측했고, 뉴스 감성은 예측하지 못했습니다. 취업 관련 텍스트는 부분적으로 채용 시장의 선행지표가 될 수 있습니다.</p>
+      <h3>Suggestion</h3>
+      <ol class="ev-list">
+        <li><b>시차 범위 넓히기</b><span>2개월, 3개월 시차로도 검증해 텍스트가 얼마나 먼 미래까지 알려주는지 확인합니다.</span></li>
+        <li><b>텍스트 플랫폼 넓히기</b><span>취업 준비생이 실제로 활동하는 블라인드, 잡플래닛, 취업 카페의 글을 더합니다.</span></li>
+        <li><b>취업 특화 감성 모델</b><span>채용 공고와 면접 후기로 학습한 모델을 만들어 취업 텍스트의 맥락을 더 정확히 읽습니다.</span></li>
+        <li><b>산업별 · 직군별로 나눠 보기</b><span>IT, 금융, 제조업이나 신입·경력으로 나누면 더 실용적인 인사이트를 얻을 수 있습니다.</span></li>
+      </ol>
+      <h3>Materials</h3>
+      <div class="gallery">
+        <figure><img src="assets/work/tm_final_p04.jpg" alt="프로젝트 개요 슬라이드" width="1100" height="618" loading="lazy"><figcaption>프로젝트 개요</figcaption></figure>
+        <figure><img src="assets/work/tm_final_p05.jpg" alt="변수와 데이터 출처 슬라이드" width="1100" height="618" loading="lazy"><figcaption>변수와 데이터 출처</figcaption></figure>
+        <figure><img src="assets/work/tm_final_p22.jpg" alt="최종 모형 결과 슬라이드" width="1100" height="618" loading="lazy"><figcaption>최종 모형 결과</figcaption></figure>
+        <figure><img src="assets/work/tm_final_p26.jpg" alt="시사점 슬라이드" width="1100" height="618" loading="lazy"><figcaption>시사점</figcaption></figure>
+      </div>
+    </div>
+    <aside class="side">
+      <dl><dt>기간</dt><dd>2026년 1학기</dd><dt>과목</dt><dd>텍스트마이닝 프로젝트</dd><dt>도구</dt><dd>Python, KNU 감성사전, KoELECTRA</dd><dt>분석</dt><dd>감성분석, 네트워크 중심성, 피어슨 상관, 다중회귀</dd></dl>
+      <a class="btn" href="assets/work/job_market_slides.pdf" target="_blank" rel="noopener">발표 자료 PDF ↗</a>
+    </aside>
+  </div>
+</div>
+
+<!-- project: sports HRD -->
+<div data-view="sports-hrd">
+  <section class="phead proj"><div class="container">
+    <div><p class="eyebrow">Project 01 — 2026</p><h1>스포츠 인력<br>담론의 변화</h1></div>
+    <div class="shot"><img src="assets/work/tm_mid_p01.jpg" alt="발표 표지" width="1100" height="618"></div>
+  </div></section>
+  <div class="container detail">
+    <a class="back more" href="#projects">← All Projects</a>
+    <div>
+      <h3>Question</h3>
+      <p class="lead">정부는 2028년까지 스포츠 종사자 수를 늘린다고 발표했습니다. 그런데 늘어나는 사람들을 어떻게 관리하고, 어떻게 키울지에 대한 이야기는 미디어에서 확인할 수 있을까요?</p>
+      <div class="nums"><div><b>20,467</b><span>분석 기사 (2011–2026)</span></div><div><b>10</b><span>LDA 토픽</span></div><div><b>12.6→10.7%</b><span>HRD 담론 비중</span></div></div>
+      <h3>Method</h3>
+      <ol class="ev-list">
+        <li><b>수집</b><span>빅카인즈에서 ‘스포츠 + 성과 + 교육’ 복합 검색으로 2011.03 ~ 2026.03 기사 20,467건을 모았습니다. 시즌마다 861건(2011-12)에서 3,545건(2025-26)까지, 평균 1,364건입니다.</span></li>
+        <li><b>전처리</b><span>kiwipiepy로 형태소를 나누고 조사·부사, 1글자·저빈도 단어를 지웠습니다. 경기 결과 기사가 섞이지 않도록 ‘E스포츠, 승리, 감독, 코치’ 등 35개 단어로 커스텀 사전을 만들어 약 19,800건을 남겼습니다.</span></li>
+        <li><b>LDA — 어떤 토픽이 있는가</b><span>gensim으로 시즌마다 토픽 10개를 뽑고, 15년을 4개 시기로 나눠 토픽 순위와 비중의 변화를 봤습니다.</span></li>
+        <li><b>DMR — 그 토픽은 어디서 강한가</b><span>tomotopy로 언론사 유형(전국지·지역지) × 뉴스 분류(스포츠·사회·경제·지역·정치) × 계절이 토픽 비중에 주는 영향을 추정했습니다.</span></li>
+      </ol>
+      <p class="knote">LDA만으로는 어떤 담론이 지배적인지는 알 수 있어도 누가 그 담론을 만드는지는 알 수 없어, DMR을 함께 썼습니다.</p>
+      <h3>Result</h3>
+      <p class="hint">시기별 상위 토픽 (LDA)</p>
+      <div class="ktable-wrap"><table class="ktable">
+        <thead><tr><th>시기</th><th>1위</th><th>2위</th><th>3위</th></tr></thead>
+        <tbody>
+          <tr><td><b>1기</b> 2011–16</td><td>학교·교육활동 15.4%</td><td>산업·지역 개발 12.3%</td><td>국제 스포츠 10.3%</td></tr>
+          <tr><td><b>2기</b> 2016–20</td><td>산업·지역 개발 16.9%</td><td>복지·지방 행정 14.7%</td><td>학교·교육활동 11.1%</td></tr>
+          <tr><td><b>3기</b> 2020–24</td><td>산업·지역 개발 12.7%</td><td>학교·교육활동 12.2%</td><td>국제 스포츠 11.5%</td></tr>
+          <tr><td><b>4기</b> 2024–26</td><td>산업·지역 개발 13.8%</td><td>국제 스포츠 12.1%</td><td>학교·교육활동 11.5%</td></tr>
+        </tbody>
+      </table></div>
+      <p class="hint" style="margin-top:28px">산업 담론과 HRD 담론의 비중 (LDA · DMR)</p>
+      <div class="ktable-wrap"><table class="ktable">
+        <thead><tr><th>시기</th><th>기사 수</th><th>LDA 산업</th><th>LDA HRD</th><th>DMR HRD</th><th>특징</th></tr></thead>
+        <tbody>
+          <tr><td><b>1기</b></td><td>5,403건</td><td>11.4%</td><td>12.6%</td><td>13.7%</td><td>HRD 비중 최고</td></tr>
+          <tr><td><b>2기</b></td><td>5,185건</td><td>15.2%</td><td>10.9%</td><td>11.9%</td><td>산업 담론 부상</td></tr>
+          <tr><td><b>3기</b></td><td>3,955건</td><td>12.5%</td><td>10.7%</td><td>11.0%</td><td>HRD 담론 최저</td></tr>
+          <tr><td><b>4기</b></td><td>5,924건</td><td>13.8%</td><td>9.9%</td><td>11.9%</td><td>정책 전환</td></tr>
+        </tbody>
+      </table></div>
+      <p class="knote">HRD 담론: ‘학교·교육활동’과 ‘대학·취업·인재’ 토픽. DMR 비중은 전국지·지역지 평균입니다.</p>
+      <ol class="ev-list" style="margin-top:28px">
+        <li><b>Q1. 미디어 담론은 어떤 토픽 구조였나</b><span>15년 동안 산업·지역 개발 토픽이 지배했고, 역량개발·처우·계약 같은 HRD 핵심 키워드는 독립 토픽을 이루지 못했습니다. 인력은 주로 ‘몇 명’이라는 양의 문제로 다뤄졌습니다.</span></li>
+        <li><b>Q2. 투자 확대에 따라 담론은 어떻게 바뀌었나</b><span>정부가 스포츠 산업 투자를 늘릴수록 HRD 비중은 12.6%에서 10.7%로 줄었습니다. 2024년 이후에도 산업 담론이 앞서, 정책과 담론 사이에 시차가 있었습니다.</span></li>
+        <li><b>Q3. HRD 담론은 어디서 강했나</b><span>모든 시기에서 지역지 쪽이 우세했습니다. 지역 현장에는 HRD 이야기가 있지만 전국 공론장으로 넓어지지 못하는 구조입니다.</span></li>
+      </ol>
+      <h3>Suggestion</h3>
+      <ol class="ev-list">
+        <li><b>스포츠 HRD 지표의 공식화</b><span>제4차 스포츠산업 진흥계획(2024–2028)의 양적 KPI에 역량개발 참여율, 처우 개선 지수, 재교육 이수율 같은 질적 지표를 더합니다.</span></li>
+        <li><b>HRD 담론의 전국 공론화</b><span>강사·지도자의 처우와 역량 문제를 전국 단위 의제로 다루는 보도자료와 포럼을 늘립니다.</span></li>
+        <li><b>스포츠 인력 HRD 전담 체계</b><span>현장 종사자의 역량 개발과 처우 개선을 맡는 전담 체계를 두고, 국민체육진흥공단의 인재개발 기능을 넓힙니다.</span></li>
+      </ol>
+      <h3>Materials</h3>
+      <div class="gallery">
+        <figure><img src="assets/work/tm_mid_p07.jpg" alt="LDA 토픽 분포 그래프" width="1100" height="618" loading="lazy"><figcaption>LDA 토픽 분포</figcaption></figure>
+        <figure><img src="assets/work/tm_mid_p09.jpg" alt="DMR 1위 토픽 비중 그래프" width="1100" height="618" loading="lazy"><figcaption>DMR 1위 토픽 비중</figcaption></figure>
+        <figure><img src="assets/work/tm_mid_p10.jpg" alt="HRD와 산업 비중 차이 그래프" width="1100" height="618" loading="lazy"><figcaption>HRD vs 산업 비중</figcaption></figure>
+        <figure><img src="assets/work/tm_mid_p13.jpg" alt="연구 질문 정리 슬라이드" width="1100" height="618" loading="lazy"><figcaption>연구 질문과 답</figcaption></figure>
+      </div>
+    </div>
+    <aside class="side">
+      <dl><dt>기간</dt><dd>2026년 1학기</dd><dt>과목</dt><dd>텍스트마이닝 프로젝트</dd><dt>도구</dt><dd>Python, gensim, tomotopy</dd><dt>분석</dt><dd>LDA, DMR</dd></dl>
+      <a class="btn" href="assets/work/sports_hrd_slides.pdf" target="_blank" rel="noopener">발표 자료 PDF ↗</a>
+    </aside>
+  </div>
+</div>
+
+<!-- project: YOU-TURN -->
+<div data-view="you-turn">
+  <section class="phead proj"><div class="container">
+    <div><p class="eyebrow">Project 03 — 2026</p><h1>YOU-TURN<br>유튜브 취향 타임라인</h1></div>
+    <div class="shot"><img src="assets/work/yt_cover.jpg" alt="발표 표지" width="1100" height="618"></div>
+  </div></section>
+  <div class="container detail">
+    <a class="back more" href="#projects">← All Projects</a>
+    <div>
+      <h3>Overview</h3>
+      <p class="lead">유튜브 사용이 늘수록 영상의 다양성이 감소하고, 결국 필터 버블에 갇히게 됩니다. 과거 재밌게 봤던 취향을 찾아 그 취향의 최신 영상을 보여 주는 서비스를 기획했습니다. YouTube Data API로 구현할 수 있는지 확인한 2인 1조 팀 활동입니다.</p>
+      <div class="nums"><div><b>316–323</b><span>1인당 API 유닛</span></div><div><b>약 30명</b><span>무료 할당량으로 하루 처리</span></div><div><b>2인 1조</b><span>팀 활동</span></div></div>
+      <h3>What I Did</h3>
+      <p class="hint">항목을 누르면 자세한 내용이 열립니다.</p>
+      <div class="did">
+        <details><summary>API 호출 방법 조사</summary><p>취향 타임라인에 필요한 호출을 순서대로 정리하고, 호출마다 드는 유닛을 계산했습니다.</p></details>
+        <details><summary>API 직접 호출</summary><p>YouTube Data API v3를 직접 호출해 보며 기획한 기능을 실제로 구현할 수 있는지 확인했습니다.</p></details>
+        <details><summary>경쟁사 분석과 서비스 가치</summary><p>유튜브 자체 기능, Spotify Wrapped, Google Takeout, Letterboxd의 한계를 비교해 우리 서비스만의 가치를 정리했습니다.</p></details>
+        <details><summary>단계별 KPI</summary><p>도입기 MAU 1,000명·리포트 카드 공유 200건, 성장기 B2B 계약 5건, 확장기 MAU 5,000명·연간 구독 비율 10%로 잡았습니다.</p></details>
+        <details><summary>AIDA 마케팅</summary><p>리포트 카드 SNS 공유로 알리고, 커뮤니티에서 “내 취향이 얼마나 변했을까?” 호기심을 만든 뒤, 무료 1년 분석에서 “전체 기간 분석은 1,900원”으로 이어지게 했습니다.</p></details>
+        <details><summary>리스크 분석</summary><p>최우선 리스크 3개와 중간 리스크 3개를 정리하고 각각의 대응 방안을 세웠습니다.</p></details>
+      </div>
+      <h3>API Design</h3>
+      <div class="ktable-wrap"><table class="ktable">
+        <thead><tr><th>호출</th><th>하는 일</th><th>유닛</th></tr></thead>
+        <tbody>
+          <tr><td>channels.list</td><td>사용자당 1회, 좋아요 재생목록 찾기</td><td>3</td></tr>
+          <tr><td>playlistItems.list</td><td>좋아요 누른 영상 수집. 페이지당 1회라 영상이 많을수록 늘어남 (Free 1년, Plus 최대 10년)</td><td>3–10</td></tr>
+          <tr><td>videos.list</td><td>영상 50개씩 묶어 장르 조회</td><td>5</td></tr>
+          <tr><td>search.list</td><td>잃어버린 취향 키워드 3개로 최신 영상 검색</td><td>300</td></tr>
+          <tr><td>videos.list</td><td>카테고리에 맞게 품질 필터링</td><td>5</td></tr>
+        </tbody>
+      </table></div>
+      <p class="knote">사용자 1인당 약 316~323유닛, 무료 할당량 10,000유닛으로 하루 약 30명을 처리할 수 있습니다. 원본 데이터는 서버에 저장하지 않고, 결과만 24시간 캐싱합니다.</p>
+      <h3>Competition</h3>
+      <div class="ktable-wrap"><table class="ktable">
+        <thead><tr><th>경쟁 서비스</th><th>한계</th></tr></thead>
+        <tbody>
+          <tr><td>유튜브 자체 기능</td><td>과거 취향 분석과 시각화 기능이 없음</td></tr>
+          <tr><td>Spotify Wrapped</td><td>음악 한정, 동영상은 다루지 않음</td></tr>
+          <tr><td>Google Takeout</td><td>원본 데이터만 주고 분석·추천은 없음</td></tr>
+          <tr><td>Letterboxd</td><td>영화 한정</td></tr>
+        </tbody>
+      </table></div>
+      <ol class="ev-list" style="margin-top:28px">
+        <li><b>유일한 포지션</b><span>지금은 없는 유튜브 취향 타임라인 서비스입니다.</span></li>
+        <li><b>독자적 가치</b><span>단순히 기록을 보여 주는 데서 끝나지 않고, 과거 취향의 최신 영상까지 연결합니다.</span></li>
+        <li><b>타깃 설계의 일치</b><span>자기 데이터를 보고 공유하길 즐기는 사용자와, 서비스에 필요한 데이터가 자연스럽게 맞물립니다.</span></li>
+      </ol>
+      <h3>Risk</h3>
+      <ol class="ev-list">
+        <li><b>YouTube API 정책 변경</b><span>Google Takeout 파일을 올리는 방식을 함께 개발해 대비합니다.</span></li>
+        <li><b>재방문율 저조</b><span>연말 특별 리포트와 분기별 ‘취향 변화’ 알림으로 다시 오게 합니다.</span></li>
+        <li><b>수익화 어려움</b><span>바이럴로 MAU를 빠르게 모은 뒤 연간 구독 전환에 집중합니다.</span></li>
+      </ol>
+      <p class="knote">중간 리스크: OAuth 앱 심사 거절(준비 기간 4~8주 확보), OAuth 로그인 거부(데이터 투명성 전면 노출), 유튜브 유사 기능 출시(브랜드·감성 차별화).</p>
+      <h3>Materials</h3>
+      <div class="gallery">
+        <figure><img src="assets/work/yt_p03.jpg" alt="문제 정의 슬라이드" width="1100" height="618" loading="lazy"><figcaption>문제 정의</figcaption></figure>
+        <figure><img src="assets/work/yt_p06.jpg" alt="핵심 기능 4가지 슬라이드" width="1100" height="618" loading="lazy"><figcaption>핵심 기능 4가지</figcaption></figure>
+        <figure><img src="assets/work/yt_p10.jpg" alt="API 호출 설계 슬라이드" width="1100" height="618" loading="lazy"><figcaption>API 호출 설계</figcaption></figure>
+        <figure><img src="assets/work/yt_p16.jpg" alt="3가지 경쟁 우위 슬라이드" width="1100" height="618" loading="lazy"><figcaption>3가지 경쟁 우위</figcaption></figure>
+      </div>
+    </div>
+    <aside class="side">
+      <dl><dt>기간</dt><dd>2026년 1학기</dd><dt>과목</dt><dd>비즈니스 프로그래밍3</dd><dt>팀</dt><dd>2인 1조 팀 활동</dd><dt>도구</dt><dd>YouTube Data API v3, Python</dd><dt>결과물</dt><dd>사업계획서</dd></dl>
+      <a class="btn" href="assets/work/you_turn_slides.pdf" target="_blank" rel="noopener">발표 자료 PDF ↗</a>
+    </aside>
+  </div>
+</div>
+
+<!-- ================= ACTIVITIES ================= -->
+<div data-view="activities">
+  <section class="phead"><div class="container">
+    <div><p class="word-s">Activities</p><p class="sub">체육 기자단과 교육 서포터즈 활동입니다. 각 제목을 누르면 원문 게시물이 새 창으로 열립니다.</p></div>
+    <p class="count"><b>30</b>Contents · 4 Teams</p>
+  </div></section>
+  <div class="container acts">
+    <article class="act">
+      <header>
+        <p class="when">2022.07 – 2023.07</p>
+        <h3>대한장애인체육회<br>소셜기자단 12기</h3>
+        <p>총 9건의 카드뉴스와 스토리텔링을 작성했습니다. 대회 현장을 찾아가 경기 결과를 알리고, 낯선 종목을 조사하며 장애인체육 관심을 이끌기 위해 노력했습니다.</p>
+        <span class="count">9 CARD NEWS</span>
+        <div class="pics">
+          <div class="ht reveal"><img src="assets/posts/kosad_blog_222852711037.jpg" alt="카드뉴스: 장애인과 비장애인이 스포츠 하나로 뭉치는 곳" width="851" height="851" loading="lazy"></div>
+          <div class="ht reveal"><img src="assets/posts/kosad_blog_222875201683.jpg" alt="카드뉴스: 창원장애인사격월드컵대회" width="851" height="851" loading="lazy"></div>
+          <div class="ht reveal"><img src="assets/posts/kosad_blog_222880510933.jpg" alt="카드뉴스: 당구 한큐에 알아보기" width="900" height="900" loading="lazy"></div>
+          <div class="ht reveal"><img src="assets/posts/kosad_blog_223007111458.jpg" alt="카드뉴스: 슐런 A부터 Z까지" width="900" height="900" loading="lazy"></div>
+        </div>
+      </header>
+      <ol>
+        <li><a href="https://blog.naver.com/kosad_blog/222852711037" target="_blank" rel="noopener"><span class="d">2022.08</span><span class="tx">장애인과 비장애인이 스포츠 하나로 뭉치는 곳<small>문을 열었지만 아직 잘 알려지지 않은 제주 장애인스포츠센터를, 누구나 함께 쓰는 공간으로 소개했습니다.</small></span><span class="ar">↗</span></a></li>
+        <li><a href="https://blog.naver.com/kosad_blog/222875201683" target="_blank" rel="noopener"><span class="d">2022.09</span><span class="tx">창원장애인사격월드컵대회<small>국내에서 처음 열린 장애인사격월드컵(20개국 약 240명)을 조사해, 대회 정보를 알기 쉽게 전했습니다.</small></span><span class="ar">↗</span></a></li>
+        <li><a href="https://blog.naver.com/kosad_blog/222880510933" target="_blank" rel="noopener"><span class="d">2022.09</span><span class="tx">참여에서 함께로! 당구 한큐에 알아보기<small>처음 열린 전국어울림생활체육대축전의 시작을 함께하며, 참가자가 많은 당구 종목을 맡아 취재했습니다.</small></span><span class="ar">↗</span></a></li>
+        <li><a href="https://blog.naver.com/kosad_blog/222910015393" target="_blank" rel="noopener"><span class="d">2022.10</span><span class="tx">제42회 전국장애인체육대회<small>수영 자유형·접영 50m 결승을 지켜보며, 장애인수영의 현장과 메달의 주인공을 전했습니다.</small></span><span class="ar">↗</span></a></li>
+        <li><a href="https://blog.naver.com/kosad_blog/222954493912" target="_blank" rel="noopener"><span class="d">2022.12</span><span class="tx">창원실내체육관에서 다 같이 농구 보자<small>그동안 다룬 ‘참여하는’ 스포츠에서 ‘보는’ 스포츠로 시선을 넓혀, 장애인의 스포츠 관람권을 이야기했습니다.</small></span><span class="ar">↗</span></a></li>
+        <li><a href="https://blog.naver.com/kosad_blog/222974768792" target="_blank" rel="noopener"><span class="d">2023.01</span><span class="tx">소셜기자단의 시선으로 보는 2022년 행사<small>언론에 덜 알려진 2022년 대회와 행사를 다시 꺼내, 소셜기자단이 본 의미와 관전 포인트를 정리했습니다.</small></span><span class="ar">↗</span></a></li>
+        <li><a href="https://blog.naver.com/kosad_blog/223007111458" target="_blank" rel="noopener"><span class="d">2023.02</span><span class="tx">슐런, A부터 Z까지<small>떠오르는 생활체육 종목 슐런을 처음 보는 사람도 바로 해 볼 수 있도록 규칙과 방법을 정리했습니다.</small></span><span class="ar">↗</span></a></li>
+        <li><a href="https://blog.naver.com/kosad_blog/223038411016" target="_blank" rel="noopener"><span class="d">2023.03</span><span class="tx">소셜기자단, 이천선수촌을 방문하다<small>이천장애인선수촌을 직접 찾아가, 선수 곁에서 일하는 분을 인터뷰했습니다.</small></span><span class="ar">↗</span></a></li>
+        <li><a href="https://blog.naver.com/kosad_blog/223122572913" target="_blank" rel="noopener"><span class="d">2023.06</span><span class="tx">웰컴 드림글래스로 세계 최초에 도전하다<small>과학기술이 장애인스포츠를 어떻게 바꾸고 있는지 궁금해, 드림글래스로 세계 최초에 도전한 사례를 찾아 소개했습니다.</small></span><span class="ar">↗</span></a></li>
+      </ol>
+    </article>
+
+    <article class="act">
+      <header>
+        <p class="when">2023.03 – 2023.12</p>
+        <h3>부산시체육회 기자단</h3>
+        <p>다양한 스포츠 대회와 생활체육 프로그램 현장을 방문해 기록했습니다.</p>
+        <span class="count">7 ARTICLES</span>
+        <div class="pics">
+          <div class="ht reveal"><img src="assets/posts/bscbsc01_223103641209.jpg" alt="부산시민자전거대회 출발선" width="900" height="548" loading="lazy"></div>
+          <div class="ht reveal"><img src="assets/posts/bscbsc01_223130567902.jpg" alt="축구대회 단체 사진" width="900" height="506" loading="lazy"></div>
+          <div class="ht reveal"><img src="assets/posts/bscbsc01_223291508686.jpg" alt="생활 탁구대회 경기장" width="900" height="675" loading="lazy"></div>
+          <div class="ht reveal"><img src="assets/posts/bscbsc01_223327584793.jpg" alt="청소년 핸드볼 대회" width="900" height="675" loading="lazy"></div>
+        </div>
+      </header>
+      <ol>
+        <li><a href="https://blog.naver.com/bscbsc01/223103641209" target="_blank" rel="noopener"><span class="d">2023.05</span><span class="tx">2023 부산시민자전거대회 성황리에 종료<small>약 1,700명이 참가한 시민자전거대회 현장을 찾아, 가족·동호인 참가자 인터뷰와 함께 코스와 분위기를 기록했습니다.</small></span><span class="ar">↗</span></a></li>
+        <li><a href="https://blog.naver.com/bscbsc01/223130567902" target="_blank" rel="noopener"><span class="d">2023.06</span><span class="tx">EXPO-KICK MATCH 축구대회<small>26팀 700명 정도가 참가한 축구대회를 빗속에서 취재하고, 선제골을 넣은 선수를 인터뷰했습니다.</small></span><span class="ar">↗</span></a></li>
+        <li><a href="https://blog.naver.com/bscbsc01/223185054820" target="_blank" rel="noopener"><span class="d">2023.08</span><span class="tx">여름 스포츠로 스케이팅은 어떠신가요?<small>긴 장마로 실내 스포츠를 찾는 사람이 늘어난 점에 주목해, 부산실내빙상장 이용 정보와 이용객 이야기를 담았습니다.</small></span><span class="ar">↗</span></a></li>
+        <li><a href="https://blog.naver.com/bscbsc01/223217779846" target="_blank" rel="noopener"><span class="d">2023.09</span><span class="tx">스포츠를 통해 진정한 ‘나’ 찾기: 여성특화프로그램<small>시 지원으로 본격 운영된 여성특화체육교실을 소개하고, 지도자와 참가자를 인터뷰해 현장의 보람과 어려움을 전했습니다.</small></span><span class="ar">↗</span></a></li>
+        <li><a href="https://blog.naver.com/bscbsc01/223243321370" target="_blank" rel="noopener"><span class="d">2023.10</span><span class="tx">Shall we dance?<small>4년 만에 다시 열린 생활체조 댄스 경연대회에서, 유아부터 노년부까지 함께 어울린 무대를 기록했습니다.</small></span><span class="ar">↗</span></a></li>
+        <li><a href="https://blog.naver.com/bscbsc01/223291508686" target="_blank" rel="noopener"><span class="d">2023.12</span><span class="tx">비슷하지만 다른 매력, 생활 탁구<small>세계탁구선수권대회를 앞두고 관심이 커진 탁구에 주목해, 일반 탁구에는 없는 생활 탁구의 ‘부수’ 제도를 쉽게 풀었습니다.</small></span><span class="ar">↗</span></a></li>
+        <li><a href="https://blog.naver.com/bscbsc01/223327584793" target="_blank" rel="noopener"><span class="d">2024.01</span><span class="tx">핸드볼의 미래를 꿈꾸다: 청소년 핸드볼 대회<small>정보도 관중도 적은 청소년 핸드볼대회를 취재해, 비인기 종목에 관심을 가져 달라고 전했습니다.</small></span><span class="ar">↗</span></a></li>
+      </ol>
+    </article>
+
+    <article class="act">
+      <header>
+        <p class="when">2023.02 – 2023.05</p>
+        <h3>KBS미디어 평생교육센터<br>서포터즈 9기</h3>
+        <p>평생교육 학습자의 참여를 이끌 수 있는 콘텐츠를 제작해 블로그에 게시했습니다.</p>
+        <span class="count">7 POSTS</span>
+        <div class="pics">
+          <div class="ht reveal"><img src="assets/posts/2yo__on7_223033743535.jpg" alt="나만의 공부법 소개하기 이미지" width="900" height="900" loading="lazy"></div>
+          <div class="ht reveal"><img src="assets/posts/2yo__on7_223016656990.jpg" alt="두 발짝 늦은 새해 다짐 이벤트 이미지" width="900" height="900" loading="lazy"></div>
+        </div>
+      </header>
+      <ol>
+        <li><a href="https://blog.naver.com/2yo__on7/222994243967" target="_blank" rel="noopener"><span class="d">2023.01</span><span class="tx">서포터즈 9기 시작</span><span class="ar">↗</span></a></li>
+        <li><a href="https://blog.naver.com/2yo__on7/223016656990" target="_blank" rel="noopener"><span class="d">2023.02</span><span class="tx">두 발짝 늦은 새해 다짐 (1차 이벤트)</span><span class="ar">↗</span></a></li>
+        <li><a href="https://blog.naver.com/2yo__on7/223033743535" target="_blank" rel="noopener"><span class="d">2023.03</span><span class="tx">나만의 공부법 소개하기</span><span class="ar">↗</span></a></li>
+        <li><a href="https://blog.naver.com/2yo__on7/223048838224" target="_blank" rel="noopener"><span class="d">2023.03</span><span class="tx">봄맞이 활동 계획서 (2차 이벤트)</span><span class="ar">↗</span></a></li>
+        <li><a href="https://blog.naver.com/2yo__on7/223062375640" target="_blank" rel="noopener"><span class="d">2023.04</span><span class="tx">긴급! 진도율 체크</span><span class="ar">↗</span></a></li>
+        <li><a href="https://blog.naver.com/2yo__on7/223075393056" target="_blank" rel="noopener"><span class="d">2023.04</span><span class="tx">내가 좋아하는 노래 소개하기 (3차 이벤트)</span><span class="ar">↗</span></a></li>
+        <li><a href="https://blog.naver.com/2yo__on7/223092185595" target="_blank" rel="noopener"><span class="d">2023.05</span><span class="tx">활동 후기</span><span class="ar">↗</span></a></li>
+      </ol>
+    </article>
+
+    <article class="act">
+      <header>
+        <p class="when">2023</p>
+        <h3>교육혁신처<br>학생교육서포터즈</h3>
+        <p>비교과 프로그램을 알리는 SNS를 운영하였습니다. 인스타그램 전용 콘텐츠를 만들고, 대동제 대면 행사를 기획, 운영하였습니다.</p>
+        <span class="count">7 CONTENTS</span>
+        <div class="pics">
+          <div class="ht reveal"><img src="assets/posts/cwnu_card_1.jpg" alt="카드뉴스 비교과 인증으로 졸업하자 표지" width="1080" height="1080" loading="lazy"></div>
+          <div class="ht reveal"><img src="assets/posts/cwnu_news11_1.jpg" alt="교육혁신본부 11월 소식지 표지" width="1080" height="1080" loading="lazy"></div>
+        </div>
+      </header>
+      <div class="act-r">
+        <ol>
+          <li><a href="https://www.instagram.com/reel/Cs8m1wGNIGb/" target="_blank" rel="noopener"><span class="d">2023.06</span><span class="tx">찾아가는 이뤄드림 설명회 현장 영상</span><span class="ar">↗</span></a></li>
+          <li><a href="https://www.instagram.com/p/Cti8PuavGVl/" target="_blank" rel="noopener"><span class="d">2023.06</span><span class="tx">비교과 인증 카드뉴스(6월호)</span><span class="ar">↗</span></a></li>
+          <li><a href="https://www.instagram.com/p/CwmlJXzLH16/" target="_blank" rel="noopener"><span class="d">2023.08</span><span class="tx">인스타그램 팔로우 이벤트</span><span class="ar">↗</span></a></li>
+          <li><a href="https://www.instagram.com/p/CwwAg5RPetV/" target="_blank" rel="noopener"><span class="d">2023.09</span><span class="tx">교육효과성 진단조사 안내 카드뉴스</span><span class="ar">↗</span></a></li>
+          <li><a href="https://www.instagram.com/p/Cw5GWviv8Oz/" target="_blank" rel="noopener"><span class="d">2023.09</span><span class="tx">팔로우 이벤트 당첨자 발표</span><span class="ar">↗</span></a></li>
+          <li><a href="https://www.instagram.com/reel/Czm5Oo8rNdW/" target="_blank" rel="noopener"><span class="d">2023.11</span><span class="tx">비교과 가이드북 소개 영상</span><span class="ar">↗</span></a></li>
+          <li><a href="https://www.instagram.com/p/C0iU7SUvi_-/" target="_blank" rel="noopener"><span class="d">2023.12</span><span class="tx">교육혁신본부 소식지(11월호)</span><span class="ar">↗</span></a></li>
+        </ol>
+        <div class="evt">
+          <p class="evt-h">대면 행사</p>
+          <figure><div class="ht reveal"><img src="assets/posts/cwnu_festival.jpg" alt="대동제 학생교육서포터즈 부스 UP! CLASS GRADE UP! 현장" width="2000" height="1126" loading="lazy"></div><figcaption><span class="d">2023.10</span>대동제 부스 ‘UP! CLASS GRADE UP!’ 기획·운영</figcaption></figure>
+          <figure><div class="ht reveal"><img src="assets/posts/cwnu_banner_1.jpg" alt="스트릿 교육과정 파이터 현수막" width="2000" height="400" loading="lazy"></div><div class="ht reveal"><img src="assets/posts/cwnu_banner_2.jpg" alt="스트릿 교육과정 파이터 행사 안내 현수막" width="2000" height="316" loading="lazy"></div><figcaption><span class="d">2023.11</span>교육과정 홍보 행사 ‘스트릿 교육과정 파이터’ 현수막 제작</figcaption></figure>
+        </div>
+      </div>
+    </article>
+  </div>
+</div>
+
+<!-- ================= ABOUT ================= -->
+<div data-view="about">
+  <section class="phead"><div class="container">
+    <div><p class="word-s">About</p><p class="sub">사람을 키우는 일을 전공했습니다. ‘그래서 효과가 있었나요?’라는 질문에 답하고 싶어 데이터를 배웠습니다.</p></div>
+    <p class="count"><b>02</b>Majors</p>
+  </div></section>
+  <div class="container about">
+    <div><h3>EDUCATION</h3><ul>
+      <li><span>인천대학교 창의인재개발학과</span><span>2025 –</span></li>
+      <li><span>데이터과학과 복수전공</span><span>2025.09 –</span></li>
+      <li><span>창원대학교 영어영문학과</span><span>2022 – 2023</span></li>
+    </ul></div>
+    <div><h3>CERTIFICATES</h3><ul>
+      <li><span>TOEIC</span><span>940점</span></li>
+      <li><span>TOEIC Speaking</span><span>IH (140점)</span></li>
+    </ul></div>
+    <div><h3>SKILLS</h3><ul>
+      <li><span>생성형 AI 활용</span><span>고급</span></li>
+      <li><span>Notion</span><span>고급</span></li>
+      <li><span>Python</span><span>중급</span></li>
+      <li><span>PowerPoint</span><span>중급</span></li>
+      <li><span>한글</span><span>중급</span></li>
+    </ul></div>
+    <div><h3>IN PROGRESS</h3><ul>
+      <li><span>대학생 사회리더 멘토링</span><span>정리 중</span></li>
+      <li><span>교육 프로그램 설계<small>교육설계, 웹 기반 교육, 캡스톤</small></span><span>정리 중</span></li>
+      <li><span>복수전공 프로젝트<small>케이스 스터디, 업무 재설계</small></span><span>정리 중</span></li>
+    </ul></div>
+  </div>
+</div>
+
+<!-- ================= CONTACT ================= -->
+<div data-view="contact">
+  <section class="phead"><div class="container">
+    <div><p class="word-s">Contact</p></div>
+  </div></section>
+  <div class="container contact">
+    <a class="mail" id="mail" href="mailto:rosa3715@naver.com">rosa3715@naver.com</a>
+    <div class="row">
+      <button class="btn line" type="button" id="copy">Copy Email</button>
+      <a class="btn" href="https://blog.naver.com/2yo__on7" target="_blank" rel="noopener">Blog ↗</a>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="container">
+    <p class="fw">Park Yoon Seon<span>.</span></p>
+    <nav aria-label="하단 메뉴"><a href="#projects">PROJECTS</a><a href="#activities">ACTIVITIES</a><a href="#about">ABOUT</a></nav>
+    <div class="small"><span>© 박윤선</span></div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+  var views = document.querySelectorAll('[data-view]');
+  var links = document.querySelectorAll('.menu a');
+  var parent = { kyobo: 'projects', 'job-market': 'projects', 'sports-hrd': 'projects', 'you-turn': 'projects' };
+  function show() {
+    var id = (location.hash || '#home').slice(1);
+    if (!document.querySelector('[data-view="' + id + '"]')) id = 'home';
+    views.forEach(function (v) { v.classList.toggle('on', v.dataset.view === id); });
+    var nav = parent[id] || id;
+    links.forEach(function (a) {
+      if (a.getAttribute('href') === '#' + nav) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    });
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener('hashchange', show);
+  show();
+
+  // hero deck follows the pointer (desktop, motion allowed)
+  var stage = document.getElementById('stage'), deck = document.getElementById('deck');
+  var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (stage && !calm && window.matchMedia('(pointer: fine)').matches) {
+    var hero = stage.closest('.hero');
+    hero.addEventListener('pointermove', function (e) {
+      var r = stage.getBoundingClientRect();
+      var x = (e.clientX - (r.left + r.width / 2)) / window.innerWidth;
+      var y = (e.clientY - (r.top + r.height / 2)) / window.innerHeight;
+      deck.style.setProperty('--ry', (x * 18).toFixed(2) + 'deg');
+      deck.style.setProperty('--rx', (6 - y * 12).toFixed(2) + 'deg');
+    });
+    hero.addEventListener('pointerleave', function () { deck.style.removeProperty('--ry'); deck.style.removeProperty('--rx'); });
+  }
+
+  // front card changes every 3 seconds
+  if (deck) {
+    var cards = Array.prototype.slice.call(deck.querySelectorAll('.card'));
+    var dots = document.querySelectorAll('#pager button'), tag = document.getElementById('tag');
+    var cur = 0, paused = false;
+    function place(f) {
+      cur = f;
+      cards.forEach(function (c, i) {
+        var rel = (i - f + 3) % 3;
+        c.classList.remove('pos-f', 'pos-r', 'pos-l');
+        c.classList.add(rel === 0 ? 'pos-f' : rel === 1 ? 'pos-r' : 'pos-l');
+        c.setAttribute('tabindex', rel === 0 ? '0' : '-1');
+        dots[i].setAttribute('aria-current', i === f ? 'true' : 'false');
+      });
+      tag.textContent = cards[f].dataset.tag;
+    }
+    dots.forEach(function (d, i) { d.addEventListener('click', function () { place(i); }); });
+    stage.addEventListener('mouseenter', function () { paused = true; });
+    stage.addEventListener('mouseleave', function () { paused = false; });
+    stage.addEventListener('focusin', function () { paused = true; });
+    stage.addEventListener('focusout', function () { paused = false; });
+    setInterval(function () { if (!paused && !document.hidden) place((cur + 1) % 3); }, 3000);
+  }
+
+  // logo eyes follow the pointer
+  var pupils = document.querySelectorAll('.logo .eye i');
+  function look(x, y) {
+    pupils.forEach(function (p) {
+      var r = p.parentNode.getBoundingClientRect();
+      var dx = x - (r.left + r.width / 2), dy = y - (r.top + r.height / 2);
+      var d = Math.max(1, Math.hypot(dx, dy)), k = Math.min(r.width * 0.2, d / 30);
+      p.style.setProperty('--px', (dx / d * k).toFixed(1) + 'px');
+      p.style.setProperty('--py', (dy / d * k).toFixed(1) + 'px');
+    });
+  }
+  document.addEventListener('pointermove', function (e) { look(e.clientX, e.clientY); });
+  document.addEventListener('pointerdown', function (e) { look(e.clientX, e.clientY); });
+
+  var btn = document.getElementById('copy');
+  btn.addEventListener('click', function () {
+    function ok() { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy Email'; }, 2000); }
+    function sel() { var r = document.createRange(); r.selectNodeContents(document.getElementById('mail')); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Ctrl+C로 복사'; }
+    try { navigator.clipboard.writeText('rosa3715@naver.com').then(ok, sel); } catch (e) { sel(); }
+  });
+})();
+
+(function(){
+  var lb=document.createElement('div');lb.className='lb';lb.setAttribute('role','dialog');lb.setAttribute('aria-label','이미지 크게 보기');
+  lb.innerHTML='<button type="button" aria-label="닫기">×</button><img alt=""><p></p>';
+  document.body.appendChild(lb);
+  var big=lb.querySelector('img'),cap=lb.querySelector('p');
+  var sel='.shot img, .gallery img, .chart img, .pics img, .evt img, .detail img, .did img';
+  function ok(img){return img.matches(sel)&&!img.closest('a')&&!img.closest('.lb');}
+  document.querySelectorAll(sel).forEach(function(i){if(ok(i))i.classList.add('zoomable');});
+  document.addEventListener('click',function(e){
+    var t=e.target;
+    if(t.tagName==='IMG'&&ok(t)){
+      var fig=t.closest('figure');var fc=fig&&fig.querySelector('figcaption');
+      big.src=t.currentSrc||t.src;big.alt=t.alt||'';cap.textContent=fc?fc.textContent:(t.alt||'');
+      lb.classList.add('on');document.documentElement.style.overflow='hidden';return;}
+    if(lb.classList.contains('on')&&lb.contains(t)){lb.classList.remove('on');document.documentElement.style.overflow='';}
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('on')){lb.classList.remove('on');document.documentElement.style.overflow='';}});
+})();
+</script>
